@@ -37,8 +37,11 @@ public class HomeController : Controller
 
         if (successfull)
         {
-            
+            Response.Cookies.Append("token", login.Username);
+            return RedirectToAction("Privacy");
         }
+
+        return RedirectToAction("Index");
     }
     
 
