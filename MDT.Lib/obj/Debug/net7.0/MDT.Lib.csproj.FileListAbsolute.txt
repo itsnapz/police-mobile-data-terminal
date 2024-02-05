@@ -1,0 +1,12 @@
+C:\Users\napz\RiderProjects\MDT\MDT.Lib\bin\Debug\net7.0\MDT.Lib.deps.json
+C:\Users\napz\RiderProjects\MDT\MDT.Lib\bin\Debug\net7.0\MDT.Lib.dll
+C:\Users\napz\RiderProjects\MDT\MDT.Lib\bin\Debug\net7.0\MDT.Lib.pdb
+C:\Users\napz\RiderProjects\MDT\MDT.Lib\obj\Debug\net7.0\MDT.Lib.csproj.AssemblyReference.cache
+C:\Users\napz\RiderProjects\MDT\MDT.Lib\obj\Debug\net7.0\MDT.Lib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\napz\RiderProjects\MDT\MDT.Lib\obj\Debug\net7.0\MDT.Lib.AssemblyInfoInputs.cache
+C:\Users\napz\RiderProjects\MDT\MDT.Lib\obj\Debug\net7.0\MDT.Lib.AssemblyInfo.cs
+C:\Users\napz\RiderProjects\MDT\MDT.Lib\obj\Debug\net7.0\MDT.Lib.csproj.CoreCompileInputs.cache
+C:\Users\napz\RiderProjects\MDT\MDT.Lib\obj\Debug\net7.0\MDT.Lib.dll
+C:\Users\napz\RiderProjects\MDT\MDT.Lib\obj\Debug\net7.0\refint\MDT.Lib.dll
+C:\Users\napz\RiderProjects\MDT\MDT.Lib\obj\Debug\net7.0\MDT.Lib.pdb
+C:\Users\napz\RiderProjects\MDT\MDT.Lib\obj\Debug\net7.0\ref\MDT.Lib.dll

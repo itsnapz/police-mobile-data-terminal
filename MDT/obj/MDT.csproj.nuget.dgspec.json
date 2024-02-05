@@ -4,14 +4,14 @@
     "C:\\Users\\napz\\RiderProjects\\MDT\\MDT\\MDT.csproj": {}
   },
   "projects": {
-    "C:\\Users\\napz\\RiderProjects\\MDT\\MDT\\MDT.csproj": {
+    "C:\\Users\\napz\\RiderProjects\\MDT\\MDT.Lib\\MDT.Lib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\napz\\RiderProjects\\MDT\\MDT\\MDT.csproj",
-        "projectName": "MDT",
-        "projectPath": "C:\\Users\\napz\\RiderProjects\\MDT\\MDT\\MDT.csproj",
+        "projectUniqueName": "C:\\Users\\napz\\RiderProjects\\MDT\\MDT.Lib\\MDT.Lib.csproj",
+        "projectName": "MDT.Lib",
+        "projectPath": "C:\\Users\\napz\\RiderProjects\\MDT\\MDT.Lib\\MDT.Lib.csproj",
         "packagesPath": "C:\\Users\\napz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\napz\\RiderProjects\\MDT\\MDT\\obj\\",
+        "outputPath": "C:\\Users\\napz\\RiderProjects\\MDT\\MDT.Lib\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\napz\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,7 +39,70 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\napz\\RiderProjects\\MDT\\MDT\\MDT.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\napz\\RiderProjects\\MDT\\MDT\\MDT.csproj",
+        "projectName": "MDT",
+        "projectPath": "C:\\Users\\napz\\RiderProjects\\MDT\\MDT\\MDT.csproj",
+        "packagesPath": "C:\\Users\\napz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\napz\\RiderProjects\\MDT\\MDT\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\napz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\napz\\RiderProjects\\MDT\\MDT.Lib\\MDT.Lib.csproj": {
+                "projectPath": "C:\\Users\\napz\\RiderProjects\\MDT\\MDT.Lib\\MDT.Lib.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
           "dependencies": {
+            "Mapster": {
+              "target": "Package",
+              "version": "[7.4.0, )"
+            },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.5, )"
