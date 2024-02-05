@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MDT.Models;
 using MDT.Services;
+using SQLitePCL;
 
 namespace MDT.Controllers;
 
@@ -16,10 +17,28 @@ public class HomeController : Controller
         _mdt = new();
     }
 
+    [HttpGet]
     public IActionResult Index()
     {
+        string token = Request.Cookies["token"];
+
+        if (string.IsNullOrEmpty(token))
+        {
+            return View(new LoginModel());
+        }
+
         return View();
     }
+
+    [HttpPost]
+    public IActionResult Index(LoginModel login)
+    {
+        if (login.Username == )
+        {
+            
+        }
+    }
+    
 
     public IActionResult Privacy()
     {
