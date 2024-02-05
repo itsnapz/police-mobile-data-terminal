@@ -33,7 +33,9 @@ public class HomeController : Controller
     [HttpPost]
     public IActionResult Index(LoginModel login)
     {
-        if (login.Username == )
+        bool successfull = _mdt.LoginCheck(login);
+
+        if (successfull)
         {
             
         }
