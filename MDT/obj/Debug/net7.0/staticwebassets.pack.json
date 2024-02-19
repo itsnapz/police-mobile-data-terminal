@@ -9,8 +9,8 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\Administrator\\Documents\\police-mobile-data-terminal\\MDT\\wwwroot\\favicon.ico",
-      "PackagePath": "staticwebassets\\favicon.ico"
+      "Id": "C:\\Users\\Administrator\\Documents\\police-mobile-data-terminal\\MDT\\wwwroot\\favicon\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon\\favicon.ico"
     },
     {
       "Id": "C:\\Users\\Administrator\\Documents\\police-mobile-data-terminal\\MDT\\wwwroot\\js\\site.js",

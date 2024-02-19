@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RMe0mzkhGiFscfjwHaq0SOQ1z9CIjcZBvwFKigjzMmE=",
+  "Hash": "Re2un49F63RoSJ0/ByoPRSgr9t2pABPwYE5++a6co1k=",
   "Source": "MDT",
   "BasePath": "_content/MDT",
   "Mode": "Default",
@@ -1214,12 +1214,12 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\Administrator\\Documents\\police-mobile-data-terminal\\MDT\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\Administrator\\Documents\\police-mobile-data-terminal\\MDT\\wwwroot\\favicon\\favicon.ico",
       "SourceId": "MDT",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Administrator\\Documents\\police-mobile-data-terminal\\MDT\\wwwroot\\",
       "BasePath": "_content/MDT",
-      "RelativePath": "favicon.ico",
+      "RelativePath": "favicon/favicon.ico",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1230,7 +1230,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\favicon.ico"
+      "OriginalItemSpec": "wwwroot\\favicon\\favicon.ico"
     },
     {
       "Identity": "C:\\Users\\Administrator\\Documents\\police-mobile-data-terminal\\MDT\\wwwroot\\js\\site.js",
