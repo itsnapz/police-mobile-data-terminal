@@ -4,34 +4,34 @@
 <div style="display: flex; justify-content: center; align-items: center; height: 80vh">
         <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
             <h2 style="font-weight: bolder; color: #0a53be; text-align: center; font-size: 42px">Create a new account👮‍♀️</h2>
-            <hr />
+            <hr style="margin-bottom: 35px; color: #ffffff" />
             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
             <div class="form-floating mb-3">
-                <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" style="border-radius: 10px"/>
-                <label asp-for="Input.Email">Email</label>
+                <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" style="background: none; border: none; border-bottom: 2px solid #ffffff; color: #ffffff; border-radius: 0"/>
+                <label asp-for="Input.Email" style="color: #ffffff; font-weight: bolder">Email</label>
                 <span asp-validation-for="Input.Email" class="text-danger"></span>
             </div>
             <div class="form-floating mb-3">
-                <input asp-for="Input.Name" class="form-control" autocomplete="name" aria-required="true" placeholder="Name" style="border-radius: 10px"/>
-                <label asp-for="Input.Name">Name</label>
+                <input asp-for="Input.Name" class="form-control" autocomplete="name" aria-required="true" placeholder="Name" style="background: none; border: none; border-bottom: 2px solid #ffffff; color: #ffffff; border-radius: 0"/>
+                <label asp-for="Input.Name" style="color: #ffffff; font-weight: bolder">Name</label>
                 <span asp-validation-for="Input.Name" class="text-danger"></span>
             </div>
             <div class="form-floating mb-3">
-                <input asp-for="Input.Surname" class="form-control" autocomplete="surname" aria-required="true" placeholder="Surname" style="border-radius: 10px"/>
-                <label asp-for="Input.Surname">Surname</label>
+                <input asp-for="Input.Surname" class="form-control" autocomplete="surname" aria-required="true" placeholder="Surname" style="background: none; border: none; border-bottom: 2px solid #ffffff; color: #ffffff; border-radius: 0"/>
+                <label asp-for="Input.Surname" style="color: #ffffff; font-weight: bolder">Surname</label>
                 <span asp-validation-for="Input.Surname" class="text-danger"></span>
             </div>
             <div class="form-floating mb-3">
-                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" style="border-radius: 10px"/>
-                <label asp-for="Input.Password">Password</label>
+                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" style="background: none; border: none; border-bottom: 2px solid #ffffff; color: #ffffff; border-radius: 0"/>
+                <label asp-for="Input.Password" style="color: #ffffff; font-weight: bolder">Password</label>
                 <span asp-validation-for="Input.Password" class="text-danger"></span>
             </div>
             <div class="form-floating mb-3">
-                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" style="border-radius: 10px"/>
-                <label asp-for="Input.ConfirmPassword">Confirm Password</label>
+                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" style="background: none; border: none; border-bottom: 2px solid #ffffff; color: #ffffff; border-radius: 0"/>
+                <label asp-for="Input.ConfirmPassword" style="color: #ffffff; font-weight: bolder">Confirm Password</label>
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
-            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary" style="font-weight: bold; border-radius: 10px">Register</button>
+            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary" style="font-weight: bold; border-radius: 10px; margin-top: 20px">Register</button>
         </form>
 </div>
 

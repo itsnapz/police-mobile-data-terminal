@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using MDT.Data.Identity;
+using MDT.Lib.Enums;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -75,13 +76,14 @@ namespace MDT.Areas.Identity.Pages.Account
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Required]
             [Display(Name = "Name")]
             public string Name { get; set; }
             
-            [Required]
             [Display(Name = "Surname")]
             public string Surname { get; set; }
+            
+            public Enums.Ranks Rank { get; set; }
+            public string CallSign { get; set; }
             
             [Required]
             [EmailAddress]
@@ -165,16 +167,13 @@ namespace MDT.Areas.Identity.Pages.Account
 
         private CustomUser CreateUser()
         {
-            try
+            return new CustomUser()
             {
-                return Activator.CreateInstance<CustomUser>();
-            }
-            catch
-            {
-                throw new InvalidOperationException($"Can't create an instance of '{nameof(CustomUser)}'. " +
-                    $"Ensure that '{nameof(CustomUser)}' is not an abstract class and has a parameterless constructor, or alternatively " +
-                    $"override the register page in /Areas/Identity/Pages/Account/Register.cshtml");
-            }
+                Name = Input.Name,
+                Surname = Input.Surname,
+                Rank = Enums.Ranks.Officer,
+                CallSign = ""
+            };
         }
 
         private IUserEmailStore<CustomUser> GetEmailStore()
