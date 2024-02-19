@@ -16,35 +16,12 @@ public class HomeController : Controller
         _logger = logger;
         _mdt = new();
     }
-
-    [HttpGet]
+    
     public IActionResult Index()
     {
-        string token = Request.Cookies["token"];
-
-        if (string.IsNullOrEmpty(token))
-        {
-            return View(new LoginModel());
-        }
-
         return View();
     }
-
-    [HttpPost]
-    public IActionResult Index(LoginModel login)
-    {
-        bool successfull = _mdt.LoginCheck(login);
-
-        if (successfull)
-        {
-            Response.Cookies.Append("token", login.Username);
-            return RedirectToAction("Privacy");
-        }
-
-        return RedirectToAction("Index");
-    }
     
-
     public IActionResult Privacy()
     {
         return View();

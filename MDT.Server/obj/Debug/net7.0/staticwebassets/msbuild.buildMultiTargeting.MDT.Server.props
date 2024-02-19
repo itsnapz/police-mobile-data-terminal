@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\MDT.Server.props" />
+</Project>
