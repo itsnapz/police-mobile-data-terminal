@@ -29,6 +29,18 @@ public class HomeController : Controller
         return View();
     }
 
+    [Authorize]
+    public IActionResult Cars()
+    {
+        return View();
+    }
+
+    [Authorize]
+    public IActionResult Records()
+    {
+        return View();
+    }
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
