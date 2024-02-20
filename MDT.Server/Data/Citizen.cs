@@ -11,4 +11,5 @@ public class Citizen
     public string Street { get; set; }
     public string Postal { get; set; }
     public List<Car> Cars { get; set; }
+    public List<Record> Records { get; set; }
 }
