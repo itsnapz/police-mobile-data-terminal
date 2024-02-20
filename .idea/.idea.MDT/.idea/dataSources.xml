@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="app.db" uuid="4377efe5-f90a-4b64-9b34-31032b3342fc">
+    <data-source source="LOCAL" name="server" uuid="4377efe5-f90a-4b64-9b34-31032b3342fc">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/MDT.Server/app.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="app.db [2]" uuid="62537870-6290-43b2-94c9-1cd911cae0b4">
+    <data-source source="LOCAL" name="login" uuid="62537870-6290-43b2-94c9-1cd911cae0b4">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>

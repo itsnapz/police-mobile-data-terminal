@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MDT.Models;
 using MDT.Services;
+using Microsoft.AspNetCore.Authorization;
 using SQLitePCL;
 
 namespace MDT.Controllers;
@@ -21,8 +22,9 @@ public class HomeController : Controller
     {
         return View();
     }
-    
-    public IActionResult Privacy()
+
+    [Authorize]
+    public IActionResult Citizens()
     {
         return View();
     }
