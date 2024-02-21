@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "y08xAjg98XhxcAFWbJE9SWNPb09p/q6y91rq4AIquCXLDHMStmpnUEG/6gAVviL3QJLY2BntxS7uOzsMOkcziQ==",
+  "dgSpecHash": "4u5hVE3Z5g+UT264j8f82KgGWVCjDINS9u5Xm8Ie2vAz36s6ZbIJP+3iDXo5oXNaIvgvXrTx/CRCzkphRwSwCQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Administrator\\Documents\\police-mobile-data-terminal\\mdt.server\\MDT.Server.csproj",
+  "projectFilePath": "C:\\Users\\Administrator\\Documents\\police-mobile-data-terminal\\MDT.Server\\MDT.Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\mapster\\7.4.0\\mapster.7.4.0.nupkg.sha512",

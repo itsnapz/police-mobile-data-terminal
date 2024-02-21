@@ -18,7 +18,7 @@ public class HomeController : Controller
         _mdt = new();
     }
     
-    public IActionResult Index()
+    public IActionResult Home()
     {
         return View();
     }
