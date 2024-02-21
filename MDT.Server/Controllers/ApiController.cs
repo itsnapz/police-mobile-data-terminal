@@ -16,7 +16,7 @@ public class ApiController : Controller
         _db = db;
     }
     
-    [HttpGet(Endpoints.GET_USERS)]
+    [HttpGet(Endpoints.GET_CITIZENS)]
     public IEnumerable<CitizenModel> GetCitizens()
     {
         return _db.GetCitizens().Result;
