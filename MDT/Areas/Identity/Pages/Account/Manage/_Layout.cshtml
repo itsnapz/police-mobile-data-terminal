@@ -10,18 +10,15 @@
 }
 
 
-<div>
-    <h2 style="color: #0a53be; font-weight: bolder; text-align: center">Change your account settings</h2>
-    <hr style="color: #ffffff"/>
-    <div class="row align-items-center justify-content-center" style="height: 70vh">
-        <div class="col">
-            <partial name="_ManageNav" />
-        </div>
-        <div class="col">
-            @RenderBody()
-        </div>
+<div style="height: 70vh; display: flex; align-items: center">
+    <div style="flex: 1; margin-right: 100px">
+        <partial name="_ManageNav" />
+    </div>
+    <div style="flex: 1; margin-left: 100px">
+        @RenderBody()
     </div>
 </div>
+
 
 @section Scripts {
     @RenderSection("Scripts", required: false)
