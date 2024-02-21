@@ -7,6 +7,9 @@ public class ApplicationDbContext : IdentityDbContext
 {
     public DbSet<Citizen> Citizens { get; set; }
     public DbSet<Car> Cars { get; set; }
+    public DbSet<Record> Records { get; set; }
+    public DbSet<Fine> Fines { get; set; }
+    public DbSet<Warrant> Warrants { get; set; }
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)
     {
