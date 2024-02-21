@@ -13,5 +13,5 @@ public class Citizen
     public List<Car>? Cars { get; set; }
     public List<Record>? Records { get; set; }
     public List<Fine>? Fines { get; set; }
-    public Warrant? Warrant { get; set; }
+    public List<Warrant>? Warrant { get; set; }
 }
