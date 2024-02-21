@@ -79,3 +79,5 @@ C:\Users\Administrator\Documents\police-mobile-data-terminal\MDT.Server\obj\Debu
 C:\Users\Administrator\Documents\police-mobile-data-terminal\MDT.Server\obj\Debug\net7.0\MDT.Server.genruntimeconfig.cache
 C:\Users\Administrator\Documents\police-mobile-data-terminal\MDT.Server\obj\Debug\net7.0\ref\MDT.Server.dll
 C:\Users\Administrator\Documents\police-mobile-data-terminal\MDT.Server\obj\Debug\net7.0\MDT.Server.csproj.Up2Date
+C:\Users\Administrator\Documents\police-mobile-data-terminal\MDT.Server\bin\Debug\net7.0\MDT.Lib.dll
+C:\Users\Administrator\Documents\police-mobile-data-terminal\MDT.Server\bin\Debug\net7.0\MDT.Lib.pdb
