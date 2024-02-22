@@ -39,4 +39,46 @@ public class ApiController : Controller
     {
         return _db.GetFines().Result;
     }
+
+    [HttpGet(Endpoints.GET_WARRANTS)]
+    public IEnumerable<WarrantModel> GetWarrants()
+    {
+        return _db.GetWarrants().Result;
+    }
+
+    [HttpGet(Endpoints.GET_CITIZEN)]
+    public CitizenModel GetCitizenById(Guid id)
+    {
+        return _db.GetCitizenById(id).Result;
+    }
+
+    [HttpGet(Endpoints.GET_CAR)]
+    public CarModel GetCarById(Guid id)
+    {
+        return _db.GetCarById(id).Result;
+    }
+
+    [HttpGet(Endpoints.GET_RECORD)]
+    public RecordModel GetRecordById(Guid id)
+    {
+        return _db.GetRecordById(id).Result;
+    }
+
+    [HttpGet(Endpoints.GET_FINE)]
+    public FineModel GetFineById(Guid id)
+    {
+        return _db.GetFineById(id).Result;
+    }
+
+    [HttpGet(Endpoints.GET_WARRANT)]
+    public WarrantModel GetWarrantById(Guid id)
+    {
+        return _db.GetWarrantById(id).Result;
+    }
+
+    [HttpGet(Endpoints.GET_OWNED_CARS)]
+    public IEnumerable<CarModel> GetOwnedCars(Guid id)
+    {
+        return _db.GetOwnedCars(id).Result;
+    }
 }
