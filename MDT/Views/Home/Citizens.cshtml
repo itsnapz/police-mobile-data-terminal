@@ -1,3 +1,40 @@
-﻿@model dynamic
+﻿@model List<MDT.Lib.Models.CitizenModel>
 
 
+<h1 style="color: #ffffff">Search Models</h1>
+
+<input type="text" id="searchInput" placeholder="Search...">
+<table class="table" id="modelsTable">
+    <thead>
+    <tr>
+        <th style="color: #ffffff">Name</th>
+        <!-- Add more columns if needed -->
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var data in Model)
+    {
+        <tr>
+            <td style="color: #ffffff">@data.Name @data.Surname</td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+@section Scripts {
+    <script>
+        document.getElementById("searchInput").addEventListener("input", function () {
+            var filter = this.value.toLowerCase();
+            var rows = document.getElementById("modelsTable").getElementsByTagName("tbody")[0].getElementsByTagName("tr");
+
+            for (var i = 0; i < rows.length; i++) {
+                var name = rows[i].getElementsByTagName("td")[0].textContent.toLowerCase();
+                if (name.includes(filter)) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        });
+    </script>
+}

@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using MDT.Models;
 using MDT.Services;
 using Microsoft.AspNetCore.Authorization;
-using SQLitePCL;
 
 namespace MDT.Controllers;
 
@@ -26,7 +25,9 @@ public class HomeController : Controller
     [Authorize]
     public IActionResult Citizens()
     {
-        return View();
+        var citizens = _mdt.GetCitizens().GetAwaiter().GetResult().ToList();
+        
+        return View(citizens);
     }
 
     [Authorize]
