@@ -34,4 +34,49 @@ public class MDTService
     {
         return await _client.GetFromJsonAsync<IEnumerable<FineModel>>($"{Endpoints.GET_FINES}");
     }
+
+    public async Task<CitizenModel> GetCitizen(Guid id)
+    {
+        return await _client.GetFromJsonAsync<CitizenModel>($"{Endpoints.GET_CITIZEN}?id={id}");
+    }
+
+    public async Task<CarModel> GetCar(Guid id)
+    {
+        return await _client.GetFromJsonAsync<CarModel>($"{Endpoints.GET_CAR}?id={id}");
+    }
+
+    public async Task<RecordModel> GetRecord(Guid id)
+    {
+        return await _client.GetFromJsonAsync<RecordModel>($"{Endpoints.GET_RECORD}?id={id}");
+    }
+
+    public async Task<FineModel> GetFine(Guid id)
+    {
+        return await _client.GetFromJsonAsync<FineModel>($"{Endpoints.GET_FINE}?id={id}");
+    }
+
+    public async Task<WarrantModel> GetWarrant(Guid id)
+    {
+        return await _client.GetFromJsonAsync<WarrantModel>($"{Endpoints.GET_WARRANT}?id={id}");
+    }
+
+    public async Task<IEnumerable<CarModel>> GetOwnedCars(Guid id)
+    {
+        return await _client.GetFromJsonAsync<IEnumerable<CarModel>>($"{Endpoints.GET_OWNED_CARS}?id={id}");
+    }
+
+    public async Task<IEnumerable<RecordModel>> GetOwnedRecords(Guid id)
+    {
+        return await _client.GetFromJsonAsync<IEnumerable<RecordModel>>($"{Endpoints.GET_OWNED_RECORDS}?id={id}");
+    }
+
+    public async Task<IEnumerable<FineModel>> GetOwnedFines(Guid id)
+    {
+        return await _client.GetFromJsonAsync<IEnumerable<FineModel>>($"{Endpoints.GET_OWNED_FINES}?id={id}");
+    }
+
+    public async Task<IEnumerable<WarrantModel>> GetOwnedWarrants(Guid id)
+    {
+        return await _client.GetFromJsonAsync<IEnumerable<WarrantModel>>($"{Endpoints.GET_OWNED_WARRANTS}?id={id}");
+    }
 }
