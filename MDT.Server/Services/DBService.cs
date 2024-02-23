@@ -2,6 +2,7 @@ using System.Collections;
 using Mapster;
 using MDT.Lib.Models;
 using MDT.Server.Data;
+using MDT.Server.Data.Migrations;
 
 namespace MDT.Server.Services;
 
@@ -138,5 +139,53 @@ public class DBService
         }
 
         return Task.FromResult<IEnumerable<CarModel>>(cars);
+    }
+
+    public Task<IEnumerable<RecordModel>> GetOwnedRecords(Guid id)
+    {
+        var querry = _db.Records.ProjectToType<RecordModel>();
+        List<RecordModel> records = new();
+
+        foreach (var record in querry)
+        {
+            if (record.Citizen.Id == id)
+            {
+                records.Add(record);
+            }
+        }
+
+        return Task.FromResult<IEnumerable<RecordModel>>(records);
+    }
+
+    public Task<IEnumerable<FineModel>> GetOwnedFines(Guid id)
+    {
+        var querry = _db.Fines.ProjectToType<FineModel>();
+        List<FineModel> fines = new();
+
+        foreach (var fine in querry)
+        {
+            if (fine.Citizen.Id == id)
+            {
+                fines.Add(fine);
+            }
+        }
+
+        return Task.FromResult<IEnumerable<FineModel>>(fines);
+    }
+
+    public Task<IEnumerable<WarrantModel>> GetOwnedWarrants(Guid id)
+    {
+        var querry = _db.Warrants.ProjectToType<WarrantModel>();
+        List<WarrantModel> warrants = new();
+
+        foreach (var warrant in querry)
+        {
+            if (warrant.Citizen.Id == id)
+            {
+                warrants.Add(warrant);
+            }
+        }
+
+        return Task.FromResult<IEnumerable<WarrantModel>>(warrants);
     }
 }

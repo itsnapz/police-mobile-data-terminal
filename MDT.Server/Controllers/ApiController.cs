@@ -81,4 +81,22 @@ public class ApiController : Controller
     {
         return _db.GetOwnedCars(id).Result;
     }
+
+    [HttpGet(Endpoints.GET_OWNED_RECORDS)]
+    public IEnumerable<RecordModel> GetOwnedRecords(Guid id)
+    {
+        return _db.GetOwnedRecords(id).Result;
+    }
+
+    [HttpGet(Endpoints.GET_OWNED_FINES)]
+    public IEnumerable<FineModel> GetOwnedFines(Guid id)
+    {
+        return _db.GetOwnedFines(id).Result;
+    }
+
+    [HttpGet(Endpoints.GET_OWNED_WARRANTS)]
+    public IEnumerable<WarrantModel> GetOwnedWarrants(Guid id)
+    {
+        return _db.GetOwnedWarrants(id).Result;
+    }
 }
