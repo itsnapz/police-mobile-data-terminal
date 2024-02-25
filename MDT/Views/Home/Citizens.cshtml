@@ -1,38 +1,38 @@
 ﻿@model List<MDT.Lib.Models.CitizenModel>
 
+<div style="display: flex; flex-direction: row; align-items: center; margin-top: 50px">
+    <h1 style="color: #ffffff; font-weight: bold; margin-right: 60px; border-left: 5px solid cyan; padding: 0 0 0 10px;">Citizens list</h1>
+    <input type="text" id="searchInput" placeholder="Search.." style="background: none; border: none; border-bottom: 2px solid #ffffff; color: #ffffff; border-radius: 0; height: 40px; width: 250px; font-weight: bolder; font-size: 20px">
+</div>
 
-<h1 style="color: #ffffff">Search Models</h1>
-
-<input type="text" id="searchInput" placeholder="Search...">
-<table class="table" id="modelsTable">
-    <thead>
-    <tr>
-        <th style="color: #ffffff">Name</th>
-        <!-- Add more columns if needed -->
-    </tr>
-    </thead>
-    <tbody>
+<div id="modelsContainer" style="display: flex; flex-direction: column; align-items: center; margin-top: 20px">
     @foreach (var data in Model)
     {
-        <tr>
-            <td style="color: #ffffff">@data.Name @data.Surname</td>
-        </tr>
+        <div class="model" style="display: flex; align-items: center; height: 125px; width: 650px; color: #ffffff; background-color: #1d1d20; margin-top: 30px; border-radius: 10px;">
+            <img src="@data.Image" style="width: 70px; height: 70px; border-radius: 50px; margin-left: 15px"/>
+            <div style="display: flex; flex-direction: column;  margin-left: 20px; flex: 1">
+                <h3 style="font-weight: bolder;">@data.Name @data.Surname</h3>
+                <h3 style="font-size: 24px; font-weight: lighter">@data.Birthday</h3>
+            </div>
+            <div style="display: flex; justify-content: flex-end; flex: 1; margin-right: 25px">
+                <button style="background-color: transparent; color: #ffffff; outline: none; border: none; font-weight: bold">\/</button>
+            </div>
+        </div>
     }
-    </tbody>
-</table>
+</div>
 
 @section Scripts {
     <script>
         document.getElementById("searchInput").addEventListener("input", function () {
             var filter = this.value.toLowerCase();
-            var rows = document.getElementById("modelsTable").getElementsByTagName("tbody")[0].getElementsByTagName("tr");
+            var models = document.getElementsByClassName("model");
 
-            for (var i = 0; i < rows.length; i++) {
-                var name = rows[i].getElementsByTagName("td")[0].textContent.toLowerCase();
-                if (name.includes(filter)) {
-                    rows[i].style.display = "";
+            for (var i = 0; i < models.length; i++) {
+                var modelName = models[i].getElementsByTagName("h3")[0].textContent.toLowerCase();
+                if (modelName.includes(filter)) {
+                    models[i].style.display = "flex";
                 } else {
-                    rows[i].style.display = "none";
+                    models[i].style.display = "none";
                 }
             }
         });
