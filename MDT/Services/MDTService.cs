@@ -35,6 +35,11 @@ public class MDTService
         return await _client.GetFromJsonAsync<IEnumerable<FineModel>>($"{Endpoints.GET_FINES}");
     }
 
+    public async Task<IEnumerable<WarrantModel>> GetWarrants()
+    {
+        return await _client.GetFromJsonAsync<IEnumerable<WarrantModel>>($"{Endpoints.GET_WARRANTS}");
+    }
+
     public async Task<CitizenModel> GetCitizen(Guid id)
     {
         return await _client.GetFromJsonAsync<CitizenModel>($"{Endpoints.GET_CITIZEN}?id={id}");

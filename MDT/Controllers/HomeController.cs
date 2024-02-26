@@ -33,25 +33,33 @@ public class HomeController : Controller
     [Authorize]
     public IActionResult Cars()
     {
-        return View();
+        var cars = _mdt.GetCars().GetAwaiter().GetResult().ToList();
+        
+        return View(cars);
     }
 
     [Authorize]
     public IActionResult Records()
     {
-        return View();
+        var records = _mdt.GetRecords().GetAwaiter().GetResult().ToList();
+        
+        return View(records);
     }
 
     [Authorize]
     public IActionResult Fines()
     {
-        return View();
+        var fines = _mdt.GetFines().GetAwaiter().GetResult().ToList();
+        
+        return View(fines);
     }
 
     [Authorize]
     public IActionResult Warrants()
     {
-        return View();
+        var warrants = _mdt.GetWarrants().GetAwaiter().GetResult().ToList();
+        
+        return View(warrants);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
