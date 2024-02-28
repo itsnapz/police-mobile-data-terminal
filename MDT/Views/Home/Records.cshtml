@@ -10,11 +10,11 @@
     {
         <div class="model" style="display: flex; align-items: center; height: 90px; width: 450px; color: #ffffff; background-color: #1d1d20; margin-top: 20px; border-radius: 10px; border: 1px solid red">
             @* <img src="@data.Image" style="width: 70px; height: 70px; border-radius: 50px; margin-left: 15px"/> *@
-            <div style="display: flex; flex-direction: column;  margin-left: 20px; flex: 2">
-                <h3 style="font-weight: bolder; font-size: 24px">@data.Name</h3>
+            <div style="display: flex; flex-direction: column;  margin-left: 20px; flex: 1;">
+                <h3 style="font-weight: bolder; font-size: 24px; margin-bottom: 0">@data.Name</h3>
             </div>
-            <div style="display: flex; flex-direction: column;  margin-left: 20px; flex: 1; max-height: 100px; max-width: 20ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">
-                <h3 style="font-size: 18px; font-weight: lighter; text-overflow: ellipsis; overflow: hidden;">@data.Description</h3>
+            <div style="display: flex; flex-direction: column;  margin-left: 20px; flex: 1; max-height: 100px; max-width: 40ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center">
+                <h3 style="font-size: 18px; font-weight: lighter; text-overflow: ellipsis; overflow: hidden; margin-bottom: 0">@data.Citizen.Name @data.Citizen.Surname</h3>
             </div>
             <div style="display: flex; justify-content: flex-end; flex: 1; margin-right: 25px">
                 <button style="background-color: transparent; color: #ffffff; outline: none; border: none; font-weight: bold">\/</button>
