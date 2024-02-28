@@ -1,6 +1,40 @@
 ﻿@model List<MDT.Lib.Models.CarModel>
 
 <div style="display: flex; flex-direction: row; align-items: center; margin-top: 50px">
-    <h1 style="color: #ffffff; font-weight: bold; margin-right: 60px; border-left: 5px solid purple; padding: 0 0 0 10px;">Cars list</h1>
+    <h1 style="color: #ffffff; font-weight: bold; margin-right: 60px; border-left: 5px solid rebeccapurple; padding: 0 0 0 10px;">Cars list</h1>
     <input type="text" id="searchInput" placeholder="Search.." style="background: none; border: none; border-bottom: 2px solid #ffffff; color: #ffffff; border-radius: 0; height: 40px; width: 250px; font-weight: bolder; font-size: 20px">
 </div>
+
+<div id="modelsContainer" style="display: flex; flex-direction: column; align-items: center; margin-top: 20px">
+    @foreach (var data in Model)
+    {
+        <div class="model" style="display: flex; align-items: center; height: 90px; width: 450px; color: #ffffff; background-color: #1d1d20; margin-top: 15px; border-radius: 10px; border: 1px solid rebeccapurple">
+            @* <img src="@data.Image" style="width: 70px; height: 70px; border-radius: 50px; margin-left: 15px"/> *@
+            <div style="display: flex; flex-direction: column;  margin-left: 20px; flex: 2">
+                <h3 style="font-weight: bolder; font-size: 24px">@data.Plate</h3>
+                <h3 style="font-size: 18px; font-weight: lighter">@data.Model - @data.Citizen.Name @data.Citizen.Surname</h3>
+            </div>
+            <div style="display: flex; justify-content: flex-end; flex: 1; margin-right: 25px">
+                <button style="background-color: transparent; color: #ffffff; outline: none; border: none; font-weight: bold" href="">\/</button>
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        document.getElementById("searchInput").addEventListener("input", function () {
+            var filter = this.value.toLowerCase();
+            var models = document.getElementsByClassName("model");
+
+            for (var i = 0; i < models.length; i++) {
+                var modelName = models[i].getElementsByTagName("h3")[0].textContent.toLowerCase();
+                if (modelName.includes(filter)) {
+                    models[i].style.display = "flex";
+                } else {
+                    models[i].style.display = "none";
+                }
+            }
+        });
+    </script>
+}

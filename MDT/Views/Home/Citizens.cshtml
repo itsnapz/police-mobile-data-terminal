@@ -8,14 +8,14 @@
 <div id="modelsContainer" style="display: flex; flex-direction: column; align-items: center; margin-top: 20px">
     @foreach (var data in Model)
     {
-        <div class="model" style="display: flex; align-items: center; height: 125px; width: 650px; color: #ffffff; background-color: #1d1d20; margin-top: 30px; border-radius: 10px;">
-            <img src="@data.Image" style="width: 70px; height: 70px; border-radius: 50px; margin-left: 15px"/>
-            <div style="display: flex; flex-direction: column;  margin-left: 20px; flex: 1">
-                <h3 style="font-weight: bolder;">@data.Name @data.Surname</h3>
-                <h3 style="font-size: 24px; font-weight: lighter">@data.Birthday</h3>
+        <div class="model" style="display: flex; align-items: center; height: 90px; width: 450px; color: #ffffff; background-color: #1d1d20; margin-top: 15px; border-radius: 10px; border: 1px solid cyan">
+            <img src="@data.Image" style="width: 60px; height: 60px; border-radius: 50px; margin-left: 15px"/>
+            <div style="display: flex; flex-direction: column;  margin-left: 20px; flex: 2">
+                <h3 style="font-weight: bolder; font-size: 24px">@data.Name @data.Surname</h3>
+                <h3 style="font-size: 18px; font-weight: lighter">@data.Birthday</h3>
             </div>
             <div style="display: flex; justify-content: flex-end; flex: 1; margin-right: 25px">
-                <button style="background-color: transparent; color: #ffffff; outline: none; border: none; font-weight: bold">\/</button>
+                <button style="background-color: transparent; color: #ffffff; outline: none; border: none; font-weight: bold" href="">\/</button>
             </div>
         </div>
     }

@@ -122,7 +122,8 @@ namespace MDT.Server.Data.Migrations
                     b.Property<Guid>("CitizenId")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("Date")
+                    b.Property<string>("Date")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Description")
@@ -133,7 +134,8 @@ namespace MDT.Server.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("OfficerId")
+                    b.Property<string>("OfficerName")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<int?>("YearsInJail")
