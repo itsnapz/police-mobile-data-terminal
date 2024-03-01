@@ -30,6 +30,7 @@ public class HomeController : Controller
         return View(citizens);
     }
 
+    [Authorize]
     public IActionResult CitizenDetail(Guid citizenId)
     {
         var citizen = _mdt.GetCitizen(citizenId).GetAwaiter().GetResult();
@@ -48,6 +49,14 @@ public class HomeController : Controller
         
         return View(cars);
     }
+    
+    [Authorize]
+    public IActionResult CarDetail(Guid carId)
+    {
+        var car = _mdt.GetCar(carId).GetAwaiter().GetResult();
+
+        return View(car);
+    }
 
     [Authorize]
     public IActionResult Records()
@@ -55,6 +64,14 @@ public class HomeController : Controller
         var records = _mdt.GetRecords().GetAwaiter().GetResult().ToList();
         
         return View(records);
+    }
+
+    [Authorize]
+    public IActionResult RecordDetail(Guid recordId)
+    {
+        var record = _mdt.GetRecord(recordId).GetAwaiter().GetResult();
+
+        return View(record);
     }
 
     [Authorize]
@@ -66,11 +83,27 @@ public class HomeController : Controller
     }
 
     [Authorize]
+    public IActionResult FineDetail(Guid fineId)
+    {
+        var fine = _mdt.GetRecord(fineId).GetAwaiter().GetResult();
+
+        return View(fine);
+    }
+
+    [Authorize]
     public IActionResult Warrants()
     {
         var warrants = _mdt.GetWarrants().GetAwaiter().GetResult().ToList();
         
         return View(warrants);
+    }
+
+    [Authorize]
+    public IActionResult WarrantDetail(Guid warrantId)
+    {
+        var warrant = _mdt.GetWarrant(warrantId).GetAwaiter().GetResult();
+
+        return View(warrant);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
