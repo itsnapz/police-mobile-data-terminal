@@ -164,3 +164,5 @@ C:\Users\napz\Documents\police-mobile-data-terminal\MDT.Server\obj\Debug\net7.0\
 C:\Users\napz\Documents\police-mobile-data-terminal\MDT.Server\obj\Debug\net7.0\MDT.Server.pdb
 C:\Users\napz\Documents\police-mobile-data-terminal\MDT.Server\obj\Debug\net7.0\MDT.Server.genruntimeconfig.cache
 C:\Users\napz\Documents\police-mobile-data-terminal\MDT.Server\obj\Debug\net7.0\ref\MDT.Server.dll
+C:\Users\napz\Documents\police-mobile-data-terminal\MDT.Server\bin\Debug\net7.0\Castle.Core.dll
+C:\Users\napz\Documents\police-mobile-data-terminal\MDT.Server\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Proxies.dll

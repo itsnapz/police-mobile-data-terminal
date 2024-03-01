@@ -30,6 +30,17 @@ public class HomeController : Controller
         return View(citizens);
     }
 
+    public IActionResult CitizenDetail(Guid citizenId)
+    {
+        var citizen = _mdt.GetCitizen(citizenId).GetAwaiter().GetResult();
+        citizen.Records = _mdt.GetOwnedRecords(citizenId).GetAwaiter().GetResult().ToList();
+        citizen.Fines = _mdt.GetOwnedFines(citizenId).GetAwaiter().GetResult().ToList();
+        citizen.Warrants = _mdt.GetOwnedWarrants(citizenId).GetAwaiter().GetResult().ToList();
+        citizen.Cars = _mdt.GetOwnedCars(citizenId).GetAwaiter().GetResult().ToList();
+
+        return View(citizen);
+    }
+
     [Authorize]
     public IActionResult Cars()
     {

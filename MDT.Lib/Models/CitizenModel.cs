@@ -11,4 +11,9 @@ public class CitizenModel
     public string? Image { get; set; } = "https://wallpapers.com/images/hd/basic-default-pfp-pxi77qv5o0zuz8j3.jpg";
     public string Street { get; set; }
     public string Postal { get; set; }
+    
+    public List<CarModel>? Cars { get; set; }
+    public List<RecordModel>? Records { get; set; }
+    public List<FineModel>? Fines { get; set; }
+    public List<WarrantModel>? Warrants { get; set; }
 }

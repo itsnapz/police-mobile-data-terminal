@@ -3,6 +3,7 @@ using Mapster;
 using MDT.Lib.Models;
 using MDT.Server.Data;
 using MDT.Server.Data.Migrations;
+using Microsoft.EntityFrameworkCore;
 
 namespace MDT.Server.Services;
 

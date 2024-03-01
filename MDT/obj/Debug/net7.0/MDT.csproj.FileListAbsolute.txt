@@ -670,3 +670,12 @@ C:\Users\napz\Documents\police-mobile-data-terminal\MDT\obj\Debug\net7.0\refint\
 C:\Users\napz\Documents\police-mobile-data-terminal\MDT\obj\Debug\net7.0\MDT.pdb
 C:\Users\napz\Documents\police-mobile-data-terminal\MDT\obj\Debug\net7.0\MDT.genruntimeconfig.cache
 C:\Users\napz\Documents\police-mobile-data-terminal\MDT\obj\Debug\net7.0\ref\MDT.dll
+C:\Users\napz\Documents\police-mobile-data-terminal\MDT\bin\Debug\net7.0\MDT.Server.deps.json
+C:\Users\napz\Documents\police-mobile-data-terminal\MDT\bin\Debug\net7.0\MDT.Server.runtimeconfig.json
+C:\Users\napz\Documents\police-mobile-data-terminal\MDT\bin\Debug\net7.0\MDT.Server.staticwebassets.runtime.json
+C:\Users\napz\Documents\police-mobile-data-terminal\MDT\bin\Debug\net7.0\app.db
+C:\Users\napz\Documents\police-mobile-data-terminal\MDT\bin\Debug\net7.0\MDT.Server.exe
+C:\Users\napz\Documents\police-mobile-data-terminal\MDT\bin\Debug\net7.0\Castle.Core.dll
+C:\Users\napz\Documents\police-mobile-data-terminal\MDT\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Proxies.dll
+C:\Users\napz\Documents\police-mobile-data-terminal\MDT\bin\Debug\net7.0\MDT.Server.dll
+C:\Users\napz\Documents\police-mobile-data-terminal\MDT\bin\Debug\net7.0\MDT.Server.pdb

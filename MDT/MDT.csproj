@@ -20,6 +20,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\MDT.Lib\MDT.Lib.csproj" />
+      <ProjectReference Include="..\MDT.Server\MDT.Server.csproj" />
     </ItemGroup>
 
     <ItemGroup>
