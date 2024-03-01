@@ -85,7 +85,7 @@ public class HomeController : Controller
     [Authorize]
     public IActionResult FineDetail(Guid fineId)
     {
-        var fine = _mdt.GetRecord(fineId).GetAwaiter().GetResult();
+        var fine = _mdt.GetFine(fineId).GetAwaiter().GetResult();
 
         return View(fine);
     }
