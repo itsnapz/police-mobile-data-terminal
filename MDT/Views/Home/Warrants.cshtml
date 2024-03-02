@@ -1,9 +1,15 @@
 ﻿@model List<MDT.Lib.Models.WarrantModel>
 
 <div style="display: flex; flex-direction: row; align-items: center; margin-top: 50px">
-    <h1 style="color: #ffffff; font-weight: bold; margin-right: 60px; border-left: 5px solid sandybrown; padding: 0 0 0 10px;">Warrants list</h1>
-    <input type="text" id="searchInput" placeholder="Search.." style="background: none; margin-right: 60px; border: none; border-bottom: 2px solid #ffffff; color: #ffffff; border-radius: 0; height: 40px; width: 250px; font-weight: bolder; font-size: 20px">
-    <button style="background-color: #1d1d20; border: none; color: #ffffff; font-weight: bolder; font-size: 20px; width: 165px; height: 45px; border-radius: 7px">New warrant⚠</button>
+    <div>
+        <h1 style="color: #ffffff; font-weight: bold; margin-right: 60px; border-left: 5px solid sandybrown; padding: 0 0 0 10px;">Warrants list</h1>
+    </div>
+    <div>
+        <input type="text" id="searchInput" placeholder="Search.." style="background: none; margin-right: 60px; border: none; border-bottom: 2px solid #ffffff; color: #ffffff; border-radius: 0; height: 40px; width: 250px; font-weight: bolder; font-size: 20px">
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center; background-color: #1d1d20; border-radius: 7px; text-align: center; width: 200px; height: 45px;">
+        <a style="color: #ffffff; font-weight: bolder; font-size: 20px; text-decoration: none; text-align: center;" href="#">New warrant⚠</a>
+    </div>
 </div>
 
 <div id="modelsContainer" style="display: flex; flex-direction: column; align-items: center; margin-top: 20px">
