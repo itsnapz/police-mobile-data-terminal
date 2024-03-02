@@ -101,14 +101,14 @@ public class ApiController : Controller
     }
 
     [HttpPost(Endpoints.CREATE_WARRANT)]
-    public IActionResult CreateWarrant(WarrantModel warrant)
+    public IActionResult CreateWarrant([FromBody] WarrantModel warrant)
     {
         if (warrant == null)
         {
             return BadRequest();
         }
         
-        _db.CreateWarrant(warrant);
+        _db.CreateWarrant(warrant); 
         return Ok();
     }
 

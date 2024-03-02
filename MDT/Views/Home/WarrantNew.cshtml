@@ -6,12 +6,12 @@
 @inject UserManager<CustomUser> UserManager
 
 <div style="display: flex; justify-content: center; align-items: center; height: 80vh">
-    <form asp-action="NewWarrant">
+    <form asp-action="WarrantNew">
         @{
             var user = await UserManager.GetUserAsync(User);
-            @Html.HiddenFor(x=>x.ReleasedBy == $"{user.Name} {user.Surname}")
             
             <input type="text" placeholder="Reason" asp-for="Reason"/>
+            <input type="text" disabled value="@user.Name @user.Surname" asp-for="ReleasedBy"/>
             <button type="submit">Create warrant👩‍⚖️</button>
         }
     </form>

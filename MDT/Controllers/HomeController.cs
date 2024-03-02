@@ -3,6 +3,7 @@ using MDT.Data.Identity;
 using MDT.Lib.Models;
 using Microsoft.AspNetCore.Mvc;
 using MDT.Models;
+using MDT.Server.Data.Migrations;
 using MDT.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -14,11 +15,13 @@ public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
     private readonly MDTService _mdt;
+    private UserManager<CustomUser> _user;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, UserManager<CustomUser> user)
     {
         _logger = logger;
         _mdt = new();
+        _user = user;
     }
     
     public IActionResult Home()
@@ -114,7 +117,35 @@ public class HomeController : Controller
     [HttpGet]
     public IActionResult WarrantNew(Guid citizenId)
     {
-        return View(new WarrantModel()
+        Response.Cookies.Append("visited", citizenId.ToString());
+        return View(new WarrantModel());
+    }
+
+    [Authorize]
+    [HttpPost]
+    public async Task<IActionResult> WarrantNew(WarrantModel warrant)
+    {
+        warrant.Id = Guid.NewGuid();
+        warrant.Date = DateTime.Now.ToShortDateString();
+
+        var user =  await _user.GetUserAsync(User);
+        warrant.ReleasedBy = $"{user.Name} {user.Surname}";
+
+        Guid id = new(Request.Cookies["visited"]);
+        var citizen = _mdt.GetCitizen(id).GetAwaiter().GetResult();
+
+        warrant.Citizen = citizen;
+        
+        await _mdt.CreateWarrant(warrant);
+        
+        return RedirectToAction("Warrants");
+    }
+
+    [Authorize]
+    [HttpGet]
+    public IActionResult RecordNew(Guid citizenId)
+    {
+        return View(new RecordModel()
         {
             Id = Guid.NewGuid(),
             Date = DateTime.Now.ToShortDateString(),
@@ -127,11 +158,11 @@ public class HomeController : Controller
 
     [Authorize]
     [HttpPost]
-    public IActionResult NewWarrant(WarrantModel warrant)
+    public IActionResult RecordNew(RecordModel record)
     {
-        _mdt.CreateWarrant(warrant);
-        
-        return RedirectToAction("Warrants");
+        _mdt.CreateRecord(record);
+
+        return RedirectToAction("Records");
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
