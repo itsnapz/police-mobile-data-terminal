@@ -2,7 +2,7 @@
 
 <div style="display: flex; align-items: flex-start; min-height: 80vh; color: #ffffff; margin-top: 150px;">
     <div style="flex: 1">
-        <div>
+        <div style="background-color: #1d1d20; border: 1px solid cyan; border-radius: 10px; width: 600px; text-align: left; padding: 35px">
             <h1 style="font-weight: bold; font-size: 48px; margin-bottom: 30px">Information🙋‍♂️</h1>
             <h3><strong>Name:</strong> @Model.Name @Model.Surname</h3>
             <h3><strong>Birthday:</strong> @Model.Birthday</h3>
@@ -18,7 +18,7 @@
                     <div class="model" style="display: flex; align-items: center; height: 90px; width: 450px; color: #ffffff; background-color: #1d1d20; margin-top: 15px; border-radius: 10px; border: 1px solid rebeccapurple">
                         <div style="display: flex; flex-direction: column;  margin-left: 20px; flex: 2">
                             <h3 style="font-weight: bolder; font-size: 24px; margin-bottom: 5px">@data.Plate</h3>
-                            <h3 style="font-size: 18px; font-weight: lighter; margin-bottom: 0">@data.Model - @data.Citizen.Name @data.Citizen.Surname</h3>
+                            <h3 style="font-size: 18px; font-weight: lighter; margin-bottom: 0">@data.Model</h3>
                         </div>
                         <div style="display: flex; justify-content: flex-end; flex: 1; margin-right: 25px">
                             <a style="background-color: transparent; color: #ffffff; outline: none; border: none; font-weight: bold; text-decoration: none" href="/Home/CarDetail?carId=@data.Id">\/</a>
@@ -31,13 +31,10 @@
                 <h3 style="font-weight: bolder; font-size: 24px;">Doesn't own any cars❌</h3>
             }
         </div>
-    </div>
-    <div style="flex: 1; display: flex; align-items: flex-end; flex-direction: column">
-        <div>
-            <img style="width: 350px; border: 2px solid cyan; border-radius: 7px" src="@Model.Image"/>
-        </div>
         <div>
             <h1 style="font-weight: bold; font-size: 48px; margin-bottom: 30px; margin-top: 100px">Records🧾</h1>
+            @if (Model.Records.Count > 0)
+            {
                 @foreach (var data in Model.Records)
                 {
                     <div class="model" style="display: flex; align-items: center; height: 90px; width: 450px; color: #ffffff; background-color: #1d1d20; margin-top: 20px; border-radius: 10px; border: 1px solid red">
@@ -52,6 +49,49 @@
                         </div>
                     </div>
                 }
+            }
+            else
+            {
+                <h3 style="font-weight: bolder; font-size: 24px;">Doesn't have any record❌</h3>
+            }
+        </div>
+    </div>
+    <div style="flex: 1; display: flex; align-items: flex-end; flex-direction: column">
+        <div>
+            <img style="width: 350px; border: 3px solid cyan; border-radius: 7px" src="@Model.Image"/>
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center; background-color: #1d1d20; border-radius: 7px; text-align: center; width: 350px; height: 45px; margin-top: 30px">
+            <a style="width: 100%; color: #ffffff; font-weight: bolder; font-size: 20px; text-decoration: none; text-align: center;" href="#">New warrant⚠</a>
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center; background-color: #1d1d20; border-radius: 7px; text-align: center; width: 350px; height: 45px; margin-top: 30px">
+            <a style="width: 100%; color: #ffffff; font-weight: bolder; font-size: 20px; text-decoration: none; text-align: center;" href="#">New record🧾</a>
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center; background-color: #1d1d20; border-radius: 7px; text-align: center; width: 350px; height: 45px; margin-top: 30px">
+            <a style="width: 100%; color: #ffffff; font-weight: bolder; font-size: 20px; text-decoration: none; text-align: center;" href="#">New fine💰</a>
+        </div>
+        <div>
+            <h1 style="font-weight: bold; font-size: 48px; margin-bottom: 30px; margin-top: 100px; text-align: right">Fines💰</h1>
+            @if (Model.Fines.Count > 0)
+            {
+                @foreach (var data in Model.Fines)
+                {
+                    <div class="model" style="display: flex; align-items: center; height: 90px; width: 450px; color: #ffffff; background-color: #1d1d20; margin-top: 20px; border-radius: 10px; border: 1px solid limegreen">
+                        <div style="display: flex; flex-direction: column;  margin-left: 20px; flex: 1;">
+                            <h3 style="font-weight: bolder; font-size: 24px; margin-bottom: 0">@data.Name</h3>
+                        </div>
+                        <div style="display: flex; flex-direction: column;  margin-left: 20px; flex: 1; max-height: 100px; max-width: 60ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center">
+                            <h3 style="font-size: 18px; font-weight: lighter; text-overflow: ellipsis; overflow: hidden; margin-bottom: 0">@data.Description</h3>
+                        </div>
+                        <div style="display: flex; justify-content: flex-end; flex: 1; margin-right: 25px">
+                            <a style="background-color: transparent; color: #ffffff; outline: none; border: none; font-weight: bold; text-decoration: none" href="/Home/FineDetail?fineId=@data.Id">\/</a>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <h3 style="font-weight: bolder; font-size: 24px">Doesn't have any fine❌</h3>
+            }
         </div>
     </div>
 </div>
