@@ -99,4 +99,48 @@ public class ApiController : Controller
     {
         return _db.GetOwnedWarrants(id).Result;
     }
+
+    public IActionResult CreateWarrant([FromBody] WarrantModel warrant)
+    {
+        if (warrant == null)
+        {
+            return BadRequest();
+        }
+        
+        _db.CreateWarrant(warrant);
+        return Ok();
+    }
+
+    public IActionResult CreateRecord([FromBody] RecordModel record)
+    {
+        if (record == null)
+        {
+            return BadRequest();
+        }
+        
+        _db.CreateRecord(record);
+        return Ok();
+    }
+
+    public IActionResult CreateFine([FromBody] FineModel fine)
+    {
+        if (fine == null)
+        {
+            return BadRequest();
+        }
+        
+        _db.CreateFine(fine);
+        return Ok();
+    }
+
+    public IActionResult CreateCar([FromBody] CarModel car)
+    {
+        if (car == null)
+        {
+            return BadRequest();
+        }
+        
+        _db.CreateCar(car);
+        return Ok();
+    }
 }
