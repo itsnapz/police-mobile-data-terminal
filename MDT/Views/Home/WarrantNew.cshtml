@@ -1,0 +1,18 @@
+﻿@using MDT.Data.Identity
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model MDT.Lib.Models.WarrantModel
+@inject SignInManager<CustomUser> SignInManager
+@inject UserManager<CustomUser> UserManager
+
+<div style="display: flex; justify-content: center; align-items: center; height: 80vh">
+    <form asp-action="NewWarrant">
+        @{
+            var user = await UserManager.GetUserAsync(User);
+            @Html.HiddenFor(x=>x.ReleasedBy == $"{user.Name} {user.Surname}")
+            
+            <input type="text" placeholder="Reason" asp-for="Reason"/>
+            <button type="submit">Create warrant👩‍⚖️</button>
+        }
+    </form>
+</div>

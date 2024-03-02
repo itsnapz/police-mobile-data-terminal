@@ -20,4 +20,9 @@ public class Endpoints
     public const string GET_OWNED_RECORDS = "/api/owned/records";
     public const string GET_OWNED_FINES = "/api/owned/fines";
     public const string GET_OWNED_WARRANTS = "/api/owned/warrants";
+
+    public const string CREATE_WARRANT = "/api/create/warrant";
+    public const string CREATE_RECORD = "/api/create/record";
+    public const string CREATE_FINE = "/api/create/fine";
+    public const string CREATE_CAR = "/api/create/car";
 }

@@ -1,8 +1,12 @@
 ﻿using System.Diagnostics;
+using MDT.Data.Identity;
+using MDT.Lib.Models;
 using Microsoft.AspNetCore.Mvc;
 using MDT.Models;
 using MDT.Services;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.CodeAnalysis.Elfie.Serialization;
 
 namespace MDT.Controllers;
 
@@ -104,6 +108,28 @@ public class HomeController : Controller
         var warrant = _mdt.GetWarrant(warrantId).GetAwaiter().GetResult();
 
         return View(warrant);
+    }
+
+    [Authorize]
+    [HttpGet]
+    public IActionResult WarrantNew(Guid citizenId)
+    {
+        return View(new WarrantModel()
+        {
+            Id = Guid.NewGuid(),
+            Date = DateTime.Now.ToShortDateString(),
+            Citizen =
+            {
+                Id = citizenId
+            }
+        });
+    }
+
+    [Authorize]
+    [HttpPost]
+    public IActionResult NewWarrant(WarrantModel model)
+    {
+        return RedirectToAction("Warrants");
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

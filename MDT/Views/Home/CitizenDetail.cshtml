@@ -41,7 +41,7 @@
                         <div style="display: flex; flex-direction: column;  margin-left: 20px; flex: 1;">
                             <h3 style="font-weight: bolder; font-size: 24px; margin-bottom: 0">@data.Name</h3>
                         </div>
-                        <div style="display: flex; flex-direction: column;  margin-left: 20px; flex: 1; max-height: 100px; max-width: 60ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center">
+                        <div style="display: flex; flex-direction: column;  margin-left: 20px; flex: 2; max-height: 100px; max-width: 60ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center">
                             <h3 style="font-size: 18px; font-weight: lighter; text-overflow: ellipsis; overflow: hidden; margin-bottom: 0">@data.Description</h3>
                         </div>
                         <div style="display: flex; justify-content: flex-end; flex: 1; margin-right: 25px">
@@ -61,7 +61,7 @@
             <img style="width: 350px; border: 3px solid cyan; border-radius: 7px" src="@Model.Image"/>
         </div>
         <div style="display: flex; justify-content: center; align-items: center; background-color: #1d1d20; border-radius: 7px; text-align: center; width: 350px; height: 45px; margin-top: 30px">
-            <a style="width: 100%; color: #ffffff; font-weight: bolder; font-size: 20px; text-decoration: none; text-align: center;" href="#">New warrant⚠</a>
+            <a style="width: 100%; color: #ffffff; font-weight: bolder; font-size: 20px; text-decoration: none; text-align: center;" href="/Home/WarrantNew?citizenId=@Model.Id">New warrant⚠</a>
         </div>
         <div style="display: flex; justify-content: center; align-items: center; background-color: #1d1d20; border-radius: 7px; text-align: center; width: 350px; height: 45px; margin-top: 30px">
             <a style="width: 100%; color: #ffffff; font-weight: bolder; font-size: 20px; text-decoration: none; text-align: center;" href="#">New record🧾</a>
@@ -69,6 +69,31 @@
         <div style="display: flex; justify-content: center; align-items: center; background-color: #1d1d20; border-radius: 7px; text-align: center; width: 350px; height: 45px; margin-top: 30px">
             <a style="width: 100%; color: #ffffff; font-weight: bolder; font-size: 20px; text-decoration: none; text-align: center;" href="#">New fine💰</a>
         </div>
+                <div>
+                    <h1 style="font-weight: bold; font-size: 48px; margin-bottom: 30px; margin-top: 100px; text-align: right">Warrants👩‍⚖️</h1>
+                    @if (Model.Warrants.Count > 0)
+                    {
+                        @foreach (var data in Model.Warrants)
+                        {
+                            <div class="model" style="display: flex; align-items: center; height: 90px; width: 450px; color: #ffffff; background-color: #1d1d20; margin-top: 20px; border-radius: 10px; border: 1px solid sandybrown">
+                                @* <img src="@data.Image" style="width: 70px; height: 70px; border-radius: 50px; margin-left: 15px"/> *@
+                                <div style="display: flex; flex-direction: column;  margin-left: 20px; flex: 1;">
+                                    <h3 style="font-weight: bolder; font-size: 24px; margin-bottom: 0">@data.Reason</h3>
+                                </div>
+                                <div style="display: flex; flex-direction: column;  margin-left: 20px; flex: 2; max-height: 100px; max-width: 60ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center">
+                                    <h3 style="font-size: 18px; font-weight: lighter; text-overflow: ellipsis; overflow: hidden; margin-bottom: 0">By @data.ReleasedBy</h3>
+                                </div>
+                                <div style="display: flex; justify-content: flex-end; flex: 1; margin-right: 25px">
+                                    <a style="background-color: transparent; color: #ffffff; outline: none; border: none; font-weight: bold; text-decoration: none" href="/Home/WarrantDetail?warrantId=@data.Id">\/</a>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <h3 style="font-weight: bolder; font-size: 24px; text-align: right">No active warrants✅</h3>
+                    }
+                </div>
         <div>
             <h1 style="font-weight: bold; font-size: 48px; margin-bottom: 30px; margin-top: 100px; text-align: right">Fines💰</h1>
             @if (Model.Fines.Count > 0)
@@ -79,7 +104,7 @@
                         <div style="display: flex; flex-direction: column;  margin-left: 20px; flex: 1;">
                             <h3 style="font-weight: bolder; font-size: 24px; margin-bottom: 0">@data.Name</h3>
                         </div>
-                        <div style="display: flex; flex-direction: column;  margin-left: 20px; flex: 1; max-height: 100px; max-width: 60ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center">
+                        <div style="display: flex; flex-direction: column;  margin-left: 20px; flex: 2; max-height: 100px; max-width: 60ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center">
                             <h3 style="font-size: 18px; font-weight: lighter; text-overflow: ellipsis; overflow: hidden; margin-bottom: 0">@data.Description</h3>
                         </div>
                         <div style="display: flex; justify-content: flex-end; flex: 1; margin-right: 25px">

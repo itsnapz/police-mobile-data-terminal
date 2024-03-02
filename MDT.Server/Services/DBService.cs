@@ -189,4 +189,32 @@ public class DBService
 
         return Task.FromResult<IEnumerable<WarrantModel>>(warrants);
     }
+
+    public void CreateWarrant(WarrantModel warrant)
+    {
+        var dto = warrant.Adapt<Warrant>();
+        _db.Warrants.Add(dto);
+        _db.SaveChanges();
+    }
+
+    public void CreateRecord(RecordModel record)
+    {
+        var dto = record.Adapt<Record>();
+        _db.Records.Add(dto);
+        _db.SaveChanges();
+    }
+
+    public void CreateFine(FineModel fine)
+    {
+        var dto = fine.Adapt<Fine>();
+        _db.Fines.Add(dto);
+        _db.SaveChanges();
+    }
+
+    public void CreateCar(CarModel car)
+    {
+        var dto = car.Adapt<Car>();
+        _db.Cars.Add(dto);
+        _db.SaveChanges();
+    }
 }
