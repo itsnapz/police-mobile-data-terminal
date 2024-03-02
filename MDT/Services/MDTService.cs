@@ -84,4 +84,64 @@ public class MDTService
     {
         return await _client.GetFromJsonAsync<IEnumerable<WarrantModel>>($"{Endpoints.GET_OWNED_WARRANTS}?id={id}");
     }
+
+    public async Task CreateWarrant(WarrantModel warrant)
+    {
+        await _client.PostAsJsonAsync(Endpoints.CREATE_WARRANT, warrant);
+    }
+
+    public async Task CreateRecord(RecordModel record)
+    {
+        await _client.PostAsJsonAsync(Endpoints.CREATE_RECORD, record);
+    }
+
+    public async Task CreateFine(FineModel fine)
+    {
+        await _client.PostAsJsonAsync(Endpoints.CREATE_FINE, fine);
+    }
+
+    public async Task CreateCar(CarModel car)
+    {
+        await _client.PostAsJsonAsync(Endpoints.CREATE_CAR, car);
+    }
+
+    public async Task DeleteWarrant(Guid id)
+    {
+        await _client.DeleteAsync($"{Endpoints.DELETE_WARRANT}?id={id}");
+    }
+
+    public async Task DeleteRecord(Guid id)
+    {
+        await _client.DeleteAsync($"{Endpoints.DELETE_RECORD}?id={id}");
+    }
+
+    public async Task DeleteFine(Guid id)
+    {
+        await _client.DeleteAsync($"{Endpoints.DELETE_FINE}?id={id}");
+    }
+
+    public async Task DeleteCar(Guid id)
+    {
+        await _client.DeleteAsync($"{Endpoints.DELETE_CAR}?id={id}");
+    }
+
+    public async Task EditWarrant(WarrantModel warrant)
+    {
+        await _client.PutAsJsonAsync(Endpoints.EDIT_WARRANT, warrant);
+    }
+
+    public async Task EditRecord(RecordModel record)
+    {
+        await _client.PutAsJsonAsync(Endpoints.EDIT_RECORD, record);
+    }
+
+    public async Task EditFine(FineModel fine)
+    {
+        await _client.PutAsJsonAsync(Endpoints.EDIT_FINE, fine);
+    }
+
+    public async Task EditCar(CarModel car)
+    {
+        await _client.PutAsJsonAsync(Endpoints.EDIT_CAR, car);
+    }
 }

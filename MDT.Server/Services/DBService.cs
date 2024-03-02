@@ -217,4 +217,68 @@ public class DBService
         _db.Cars.Add(dto);
         _db.SaveChanges();
     }
+
+    public void DeleteWarrant(Guid id)
+    {
+        var warrant = _db.Warrants.FirstOrDefault(x => x.Id == id);
+
+        _db.Warrants.Remove(warrant);
+        _db.SaveChanges();
+    }
+
+    public void DeleteRecord(Guid id)
+    {
+        var record = _db.Records.FirstOrDefault(x => x.Id == id);
+
+        _db.Records.Remove(record);
+        _db.SaveChanges();
+    }
+
+    public void DeleteFine(Guid id)
+    {
+        var fine = _db.Fines.FirstOrDefault(x => x.Id == id);
+
+        _db.Fines.Remove(fine);
+        _db.SaveChanges();
+    }
+
+    public void DeleteCar(Guid id)
+    {
+        var car = _db.Cars.FirstOrDefault(x => x.Id == id);
+
+        _db.Cars.Remove(car);
+        _db.SaveChanges();
+    }
+
+    public void EditWarrant(WarrantModel warrant)
+    {
+        var model = _db.Warrants.FirstOrDefault(x => x.Id == warrant.Id);
+
+        model = warrant.Adapt<Warrant>();
+        _db.SaveChanges();
+    }
+
+    public void EditRecord(RecordModel record)
+    {
+        var model = _db.Records.FirstOrDefault(x => x.Id == record.Id);
+
+        model = record.Adapt<Record>();
+        _db.SaveChanges();
+    }
+
+    public void EditFine(FineModel fine)
+    {
+        var model = _db.Fines.FirstOrDefault(x => x.Id == fine.Id);
+
+        model = fine.Adapt<Fine>();
+        _db.SaveChanges();
+    }
+
+    public void EditCar(CarModel car)
+    {
+        var model = _db.Cars.FirstOrDefault(x => x.Id == car.Id);
+
+        model = car.Adapt<Car>();
+        _db.SaveChanges();
+    }
 }

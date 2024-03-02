@@ -25,4 +25,14 @@ public class Endpoints
     public const string CREATE_RECORD = "/api/create/record";
     public const string CREATE_FINE = "/api/create/fine";
     public const string CREATE_CAR = "/api/create/car";
+
+    public const string DELETE_WARRANT = "/api/delete/warrant";
+    public const string DELETE_RECORD = "/api/delete/record";
+    public const string DELETE_FINE = "/api/delete/fine";
+    public const string DELETE_CAR = "/api/delete/car";
+
+    public const string EDIT_WARRANT = "/api/edit/warrant";
+    public const string EDIT_RECORD = "/api/edit/record";
+    public const string EDIT_FINE = "/api/edit/fine";
+    public const string EDIT_CAR = "/api/edit/car";
 }

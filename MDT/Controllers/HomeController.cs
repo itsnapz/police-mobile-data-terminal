@@ -127,8 +127,10 @@ public class HomeController : Controller
 
     [Authorize]
     [HttpPost]
-    public IActionResult NewWarrant(WarrantModel model)
+    public IActionResult NewWarrant(WarrantModel warrant)
     {
+        _mdt.CreateWarrant(warrant);
+        
         return RedirectToAction("Warrants");
     }
 

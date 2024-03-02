@@ -100,7 +100,8 @@ public class ApiController : Controller
         return _db.GetOwnedWarrants(id).Result;
     }
 
-    public IActionResult CreateWarrant([FromBody] WarrantModel warrant)
+    [HttpPost(Endpoints.CREATE_WARRANT)]
+    public IActionResult CreateWarrant(WarrantModel warrant)
     {
         if (warrant == null)
         {
@@ -111,7 +112,8 @@ public class ApiController : Controller
         return Ok();
     }
 
-    public IActionResult CreateRecord([FromBody] RecordModel record)
+    [HttpPost(Endpoints.CREATE_RECORD)]
+    public IActionResult CreateRecord(RecordModel record)
     {
         if (record == null)
         {
@@ -122,7 +124,8 @@ public class ApiController : Controller
         return Ok();
     }
 
-    public IActionResult CreateFine([FromBody] FineModel fine)
+    [HttpPost(Endpoints.CREATE_FINE)]
+    public IActionResult CreateFine(FineModel fine)
     {
         if (fine == null)
         {
@@ -133,7 +136,8 @@ public class ApiController : Controller
         return Ok();
     }
 
-    public IActionResult CreateCar([FromBody] CarModel car)
+    [HttpPost(Endpoints.CREATE_CAR)]
+    public IActionResult CreateCar(CarModel car)
     {
         if (car == null)
         {
@@ -141,6 +145,102 @@ public class ApiController : Controller
         }
         
         _db.CreateCar(car);
+        return Ok();
+    }
+
+    [HttpDelete(Endpoints.DELETE_WARRANT)]
+    public IActionResult DeleteWarrant(Guid id)
+    {
+        if (id == null)
+        {
+            return BadRequest();
+        }
+        
+        _db.DeleteWarrant(id);
+        return Ok();
+    }
+
+    [HttpDelete(Endpoints.DELETE_RECORD)]
+    public IActionResult DeleteRecord(Guid id)
+    {
+        if (id == null)
+        {
+            return BadRequest();
+        }
+        
+        _db.DeleteRecord(id);
+        return Ok();
+    }
+
+    [HttpDelete(Endpoints.DELETE_FINE)]
+    public IActionResult DeleteFine(Guid id)
+    {
+        if (id == null)
+        {
+            return BadRequest();
+        }
+        
+        _db.DeleteFine(id);
+        return Ok();
+    }
+
+    [HttpDelete(Endpoints.DELETE_CAR)]
+    public IActionResult DeleteCar(Guid id)
+    {
+        if (id == null)
+        {
+            return BadRequest();
+        }
+        
+        _db.DeleteCar(id);
+        return Ok();
+    }
+
+    [HttpPut(Endpoints.EDIT_WARRANT)]
+    public IActionResult EditWarrant(WarrantModel warrant)
+    {
+        if (warrant == null)
+        {
+            return BadRequest();
+        }
+        
+        _db.EditWarrant(warrant);
+        return Ok();
+    }
+
+    [HttpPut(Endpoints.EDIT_RECORD)]
+    public IActionResult EditRecord(RecordModel record)
+    {
+        if (record == null)
+        {
+            return BadRequest();
+        }
+        
+        _db.EditRecord(record);
+        return Ok();
+    }
+
+    [HttpPut(Endpoints.EDIT_FINE)]
+    public IActionResult EditFine(FineModel fine)
+    {
+        if (fine == null)
+        {
+            return BadRequest();
+        }
+        
+        _db.EditFine(fine);
+        return Ok();
+    }
+
+    [HttpPut(Endpoints.EDIT_CAR)]
+    public IActionResult EditCar(CarModel car)
+    {
+        if (car == null)
+        {
+            return BadRequest();
+        }
+        
+        _db.EditCar(car);
         return Ok();
     }
 }
