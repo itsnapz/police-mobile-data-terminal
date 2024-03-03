@@ -92,6 +92,14 @@ public class HomeController : Controller
         
         return RedirectToAction("Cars");
     }
+    
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> CarDelete(Guid carId)
+    {
+        await _mdt.DeleteCar(carId);
+        
+        return RedirectToAction("Cars");
+    }
 
     [Authorize]
     public IActionResult Records()
@@ -137,6 +145,14 @@ public class HomeController : Controller
         record.CitizenId = id;
 
         await _mdt.CreateRecord(record);
+        
+        return RedirectToAction("Records");
+    }
+
+    [Authorize(Roles = "Admin")]
+    public IActionResult RecordDelete(Guid carId)
+    {
+        _mdt.DeleteRecord(carId);
         
         return RedirectToAction("Records");
     }
@@ -189,6 +205,14 @@ public class HomeController : Controller
         return RedirectToAction("Fines");
     }
 
+    [Authorize(Roles = "Admin")]
+    public IActionResult FineDelete(Guid fineId)
+    {
+        _mdt.DeleteFine(fineId);
+        
+        return RedirectToAction("Fines");
+    }
+
     [Authorize]
     public IActionResult Warrants()
     {
@@ -234,6 +258,14 @@ public class HomeController : Controller
         warrant.CitizenId = id;
         
         await _mdt.CreateWarrant(warrant);
+        
+        return RedirectToAction("Warrants");
+    }
+
+    [Authorize(Roles = "Admin")]
+    public IActionResult WarrantDelete(Guid warrantId)
+    {
+        _mdt.DeleteWarrant(warrantId);
         
         return RedirectToAction("Warrants");
     }

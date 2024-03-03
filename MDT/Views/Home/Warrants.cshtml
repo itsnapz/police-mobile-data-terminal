@@ -22,9 +22,23 @@
             <div style="display: flex; flex-direction: column;  margin-left: 20px; flex: 1; max-height: 100px; max-width: 40ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center">
                 <h3 style="font-size: 18px; font-weight: lighter; text-overflow: ellipsis; overflow: hidden; margin-bottom: 0">@data.CitizenData.Name @data.CitizenData.Surname</h3>
             </div>
-            <div style="display: flex; justify-content: flex-end; flex: 1; margin-right: 25px">
-                <a style="background-color: transparent; color: #ffffff; outline: none; border: none; font-weight: bold; text-decoration: none" href="/Home/WarrantDetail?warrantId=@data.Id">\/</a>
-            </div>
+            @if (User.IsInRole("Admin"))
+            {
+                <div style="display: flex; justify-content: flex-end; flex: 1; margin-right: 25px">
+                    <div style="margin-right: 25px">
+                        <a style="background-color: transparent; color: #ffffff; outline: none; border: none; font-weight: bold; text-decoration: none" href="/Home/WarrantDetail?warrantId=@data.Id">\/</a>
+                    </div>
+                    <div style="">
+                        <a style="background-color: transparent; color: #ffffff; outline: none; border: none; font-weight: bold; text-decoration: none" href="/Home/WarrantDelete?warrantId=@data.Id">X</a>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div style="display: flex; justify-content: flex-end; flex: 1; margin-right: 25px">
+                    <a style="background-color: transparent; color: #ffffff; outline: none; border: none; font-weight: bold; text-decoration: none" href="/Home/WarrantDetail?warrantId=@data.Id">\/</a>
+                </div>
+            }
         </div>
     }
 </div>
