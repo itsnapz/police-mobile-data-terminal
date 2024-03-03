@@ -8,5 +8,7 @@ public class FineModel
     public int Price { get; set; }
     public string Date { get; set; }
     public string OfficerName { get; set; }
-    public CitizenModel Citizen { get; set; }
+    
+    public Guid CitizenId { get; set; }
+    public CitizenModel? CitizenData { get; set; }
 }

@@ -53,6 +53,10 @@ public class HomeController : Controller
     public IActionResult Cars()
     {
         var cars = _mdt.GetCars().GetAwaiter().GetResult().ToList();
+        foreach (var car in cars)
+        {
+            car.CitizenData = _mdt.GetCitizen(car.CitizenId).GetAwaiter().GetResult();
+        }
         
         return View(cars);
     }
@@ -61,14 +65,42 @@ public class HomeController : Controller
     public IActionResult CarDetail(Guid carId)
     {
         var car = _mdt.GetCar(carId).GetAwaiter().GetResult();
+        car.CitizenData = _mdt.GetCitizen(car.CitizenId).GetAwaiter().GetResult();
 
         return View(car);
+    }
+    
+    [Authorize]
+    [HttpGet]
+    public IActionResult CarNew(Guid citizenId)
+    {
+        Response.Cookies.Append("visited", citizenId.ToString());
+        return View(new CarModel());
+    }
+
+    [Authorize]
+    [HttpPost]
+    public async Task<IActionResult> CarNew(CarModel car)
+    {
+        car.Id = Guid.NewGuid();
+
+        Guid id = new(Request.Cookies["visited"]);
+
+        car.CitizenId = id;
+
+        await _mdt.CreateCar(car);
+        
+        return RedirectToAction("Cars");
     }
 
     [Authorize]
     public IActionResult Records()
     {
         var records = _mdt.GetRecords().GetAwaiter().GetResult().ToList();
+        foreach (var record in records)
+        {
+            record.CitizenData = _mdt.GetCitizen(record.CitizenId).GetAwaiter().GetResult();
+        }
         
         return View(records);
     }
@@ -77,14 +109,46 @@ public class HomeController : Controller
     public IActionResult RecordDetail(Guid recordId)
     {
         var record = _mdt.GetRecord(recordId).GetAwaiter().GetResult();
+        record.CitizenData = _mdt.GetCitizen(record.CitizenId).GetAwaiter().GetResult();
 
         return View(record);
+    }
+    
+    [Authorize]
+    [HttpGet]
+    public IActionResult RecordNew(Guid citizenId)
+    {
+        Response.Cookies.Append("visited", citizenId.ToString());
+        return View(new RecordModel());
+    }
+
+    [Authorize]
+    [HttpPost]
+    public async Task<IActionResult> RecordNew(RecordModel record)
+    {
+        record.Id = Guid.NewGuid();
+        record.Date = DateTime.Now.ToShortDateString();
+
+        var user =  await _user.GetUserAsync(User);
+        record.OfficerName = $"{user.Name} {user.Surname}";
+
+        Guid id = new(Request.Cookies["visited"]);
+
+        record.CitizenId = id;
+
+        await _mdt.CreateRecord(record);
+        
+        return RedirectToAction("Records");
     }
 
     [Authorize]
     public IActionResult Fines()
     {
         var fines = _mdt.GetFines().GetAwaiter().GetResult().ToList();
+        foreach (var fine in fines)
+        {
+            fine.CitizenData = _mdt.GetCitizen(fine.CitizenId).GetAwaiter().GetResult();
+        }
         
         return View(fines);
     }
@@ -96,11 +160,42 @@ public class HomeController : Controller
 
         return View(fine);
     }
+    
+    [Authorize]
+    [HttpGet]
+    public IActionResult FineNew(Guid citizenId)
+    {
+        Response.Cookies.Append("visited", citizenId.ToString());
+        return View(new FineModel());
+    }
+
+    [Authorize]
+    [HttpPost]
+    public async Task<IActionResult> FineNew(FineModel fine)
+    {
+        fine.Id = Guid.NewGuid();
+        fine.Date = DateTime.Now.ToShortDateString();
+
+        var user =  await _user.GetUserAsync(User);
+        fine.OfficerName = $"{user.Name} {user.Surname}";
+
+        Guid id = new(Request.Cookies["visited"]);
+
+        fine.CitizenId = id;
+
+        await _mdt.CreateFine(fine);
+        
+        return RedirectToAction("Fines");
+    }
 
     [Authorize]
     public IActionResult Warrants()
     {
         var warrants = _mdt.GetWarrants().GetAwaiter().GetResult().ToList();
+        foreach (var warrant in warrants)
+        {
+            warrant.CitizenData = _mdt.GetCitizen(warrant.CitizenId).GetAwaiter().GetResult();
+        }
         
         return View(warrants);
     }
@@ -134,35 +229,11 @@ public class HomeController : Controller
         Guid id = new(Request.Cookies["visited"]);
         var citizen = _mdt.GetCitizen(id).GetAwaiter().GetResult();
 
-        warrant.Citizen = citizen;
+        warrant.CitizenId = id;
         
         await _mdt.CreateWarrant(warrant);
         
         return RedirectToAction("Warrants");
-    }
-
-    [Authorize]
-    [HttpGet]
-    public IActionResult RecordNew(Guid citizenId)
-    {
-        return View(new RecordModel()
-        {
-            Id = Guid.NewGuid(),
-            Date = DateTime.Now.ToShortDateString(),
-            Citizen =
-            {
-                Id = citizenId
-            }
-        });
-    }
-
-    [Authorize]
-    [HttpPost]
-    public IActionResult RecordNew(RecordModel record)
-    {
-        _mdt.CreateRecord(record);
-
-        return RedirectToAction("Records");
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

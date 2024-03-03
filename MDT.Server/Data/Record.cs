@@ -7,6 +7,8 @@ public class Record
     public string Description { get; set; }
     public string Date { get; set; }
     public string OfficerName { get; set; }
-    public Citizen Citizen { get; set; }
     public int? YearsInJail { get; set; }
+    
+    public Guid CitizenId { get; set; }
+    public Citizen Citizen { get; set; }
 }

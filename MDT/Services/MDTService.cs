@@ -87,10 +87,6 @@ public class MDTService
 
     public async Task CreateWarrant(WarrantModel warrant)
     {
-        Console.WriteLine(warrant.Id);
-        Console.WriteLine(warrant.ReleasedBy);
-        Console.WriteLine(warrant.Reason);
-        Console.WriteLine(warrant.Citizen.Id);
         await _client.PostAsJsonAsync(Endpoints.CREATE_WARRANT, warrant);
     }
 

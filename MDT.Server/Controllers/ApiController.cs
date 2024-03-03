@@ -113,7 +113,7 @@ public class ApiController : Controller
     }
 
     [HttpPost(Endpoints.CREATE_RECORD)]
-    public IActionResult CreateRecord(RecordModel record)
+    public IActionResult CreateRecord([FromBody] RecordModel record)
     {
         if (record == null)
         {
@@ -125,7 +125,7 @@ public class ApiController : Controller
     }
 
     [HttpPost(Endpoints.CREATE_FINE)]
-    public IActionResult CreateFine(FineModel fine)
+    public IActionResult CreateFine([FromBody] FineModel fine)
     {
         if (fine == null)
         {
@@ -137,7 +137,7 @@ public class ApiController : Controller
     }
 
     [HttpPost(Endpoints.CREATE_CAR)]
-    public IActionResult CreateCar(CarModel car)
+    public IActionResult CreateCar([FromBody] CarModel car)
     {
         if (car == null)
         {

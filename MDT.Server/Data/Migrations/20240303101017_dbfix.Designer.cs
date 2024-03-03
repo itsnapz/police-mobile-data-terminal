@@ -3,6 +3,7 @@ using System;
 using MDT.Server.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MDT.Server.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240303101017_dbfix")]
+    partial class dbfix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.16");
@@ -380,7 +383,7 @@ namespace MDT.Server.Data.Migrations
             modelBuilder.Entity("MDT.Server.Data.Car", b =>
                 {
                     b.HasOne("MDT.Server.Data.Citizen", "Citizen")
-                        .WithMany("Cars")
+                        .WithMany()
                         .HasForeignKey("CitizenId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -391,7 +394,7 @@ namespace MDT.Server.Data.Migrations
             modelBuilder.Entity("MDT.Server.Data.Fine", b =>
                 {
                     b.HasOne("MDT.Server.Data.Citizen", "Citizen")
-                        .WithMany("Fines")
+                        .WithMany()
                         .HasForeignKey("CitizenId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -402,7 +405,7 @@ namespace MDT.Server.Data.Migrations
             modelBuilder.Entity("MDT.Server.Data.Record", b =>
                 {
                     b.HasOne("MDT.Server.Data.Citizen", "Citizen")
-                        .WithMany("Records")
+                        .WithMany()
                         .HasForeignKey("CitizenId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -413,7 +416,7 @@ namespace MDT.Server.Data.Migrations
             modelBuilder.Entity("MDT.Server.Data.Warrant", b =>
                 {
                     b.HasOne("MDT.Server.Data.Citizen", "Citizen")
-                        .WithMany("Warrants")
+                        .WithMany()
                         .HasForeignKey("CitizenId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -470,17 +473,6 @@ namespace MDT.Server.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("MDT.Server.Data.Citizen", b =>
-                {
-                    b.Navigation("Cars");
-
-                    b.Navigation("Fines");
-
-                    b.Navigation("Records");
-
-                    b.Navigation("Warrants");
                 });
 #pragma warning restore 612, 618
         }

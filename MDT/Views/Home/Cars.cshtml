@@ -12,7 +12,7 @@
             @* <img src="@data.Image" style="width: 70px; height: 70px; border-radius: 50px; margin-left: 15px"/> *@
             <div style="display: flex; flex-direction: column;  margin-left: 20px; flex: 2">
                 <h3 style="font-weight: bolder; font-size: 24px; margin-bottom: 5px">@data.Plate</h3>
-                <h3 style="font-size: 18px; font-weight: lighter; margin-bottom: 0">@data.Model - @data.Citizen.Name @data.Citizen.Surname</h3>
+                <h3 style="font-size: 18px; font-weight: lighter; margin-bottom: 0">@data.Model - @data.CitizenData.Name @data.CitizenData.Surname</h3>
             </div>
             <div style="display: flex; justify-content: flex-end; flex: 1; margin-right: 25px">
                 <a style="background-color: transparent; color: #ffffff; outline: none; border: none; font-weight: bold; text-decoration: none" href="/Home/CarDetail?carId=@data.Id">\/</a>

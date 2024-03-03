@@ -133,7 +133,7 @@ public class DBService
 
         foreach (var car in querry)
         {
-            if (car.Citizen.Id == id)
+            if (car.CitizenId == id)
             {
                 cars.Add(car);
             }
@@ -149,7 +149,7 @@ public class DBService
 
         foreach (var record in querry)
         {
-            if (record.Citizen.Id == id)
+            if (record.CitizenId == id)
             {
                 records.Add(record);
             }
@@ -165,7 +165,7 @@ public class DBService
 
         foreach (var fine in querry)
         {
-            if (fine.Citizen.Id == id)
+            if (fine.CitizenId == id)
             {
                 fines.Add(fine);
             }
@@ -181,7 +181,7 @@ public class DBService
 
         foreach (var warrant in querry)
         {
-            if (warrant.Citizen.Id == id)
+            if (warrant.CitizenId == id)
             {
                 warrants.Add(warrant);
             }

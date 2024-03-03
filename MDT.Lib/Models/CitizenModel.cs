@@ -15,5 +15,5 @@ public class CitizenModel
     public List<CarModel>? Cars { get; set; }
     public List<RecordModel>? Records { get; set; }
     public List<FineModel>? Fines { get; set; }
-    public List<WarrantModel>? Warrants { get; set; }
+    public ICollection<WarrantModel> Warrants { get; set; }
 }

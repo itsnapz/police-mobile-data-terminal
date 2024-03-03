@@ -11,4 +11,10 @@ public class Citizen
     public string Street { get; set; }
     public string Postal { get; set; }
     public string? Image { get; set; } = "https://wallpapers.com/images/hd/basic-default-pfp-pxi77qv5o0zuz8j3.jpg";
+    
+    
+    public ICollection<Warrant> Warrants { get; set; }
+    public ICollection<Car> Cars { get; set; }
+    public ICollection<Record> Records { get; set; }
+    public ICollection<Fine> Fines { get; set; }
 }
