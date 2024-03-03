@@ -157,6 +157,7 @@ public class HomeController : Controller
     public IActionResult FineDetail(Guid fineId)
     {
         var fine = _mdt.GetFine(fineId).GetAwaiter().GetResult();
+        fine.CitizenData = _mdt.GetCitizen(fine.CitizenId).GetAwaiter().GetResult();
 
         return View(fine);
     }
@@ -204,6 +205,7 @@ public class HomeController : Controller
     public IActionResult WarrantDetail(Guid warrantId)
     {
         var warrant = _mdt.GetWarrant(warrantId).GetAwaiter().GetResult();
+        warrant.CitizenData = _mdt.GetCitizen(warrant.CitizenId).GetAwaiter().GetResult();
 
         return View(warrant);
     }
