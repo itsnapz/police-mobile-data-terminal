@@ -1,1 +1,24 @@
 ﻿@model MDT.Lib.Models.RecordModel
+
+<div style="display: flex; min-height: 80vh; align-items: center; color: #ffffff;">
+    <div style="flex: 1; flex-direction: column">
+        <div style="background-color: #1d1d20; border: 1px solid red; border-radius: 10px; width: 600px; text-align: left; padding: 35px">
+            <h1 style="font-weight: bold; font-size: 48px; margin-bottom: 30px">@Model.Name</h1>
+            <h3>@Model.Description</h3>
+            <h3 style="font-weight: lighter; font-size: 28px; margin-top: 18px; text-align: right">@Model.OfficerName - @Model.Date</h3>
+        </div>
+        <div style="background-color: #1d1d20; border: 1px solid cyan; border-radius: 10px; width: 600px; text-align: left; padding: 35px; margin-top: 60px">
+            <h1 style="font-weight: bold; font-size: 48px; margin-bottom: 30px">Citizen information🙋‍♂️</h1>
+            <h3><strong>Name:</strong> @Model.CitizenData.Name @Model.CitizenData.Surname</h3>
+            <h3><strong>Birthday:</strong> @Model.CitizenData.Birthday</h3>
+            <h3><strong>Phone:</strong> @Model.CitizenData.PhoneNumber</h3>
+            <h3><strong>Address:</strong> @Model.CitizenData.City @Model.CitizenData.Street @Model.CitizenData.Postal</h3>
+        </div>
+    </div>
+    <div style="flex: 1; display: flex; align-items: flex-end; flex-direction: column">
+        <img style="width: 350px; border: 3px solid cyan; border-radius: 7px" src="@Model.CitizenData.Image"/>
+        <div style="display: flex; justify-content: center; align-items: center; background-color: #1d1d20; border-radius: 7px; text-align: center; width: 350px; height: 45px; margin-top: 30px">
+            <a style="width: 100%; color: #ffffff; font-weight: bolder; font-size: 20px; text-decoration: none; text-align: center;" href="/Home/CitizenDetail?citizenId=@Model.CitizenData.Id">Visit citizen🙋‍♂️</a>
+        </div>
+    </div>
+</div>
