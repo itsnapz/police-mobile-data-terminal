@@ -4,7 +4,7 @@
     <form asp-action="RecordEdit" style="display: flex; flex-direction: column; justify-content: center; align-items: center">
         @Html.HiddenFor(m=>m.Id)
         @Html.HiddenFor(m=>m.Date)
-        @Html.HiddenFor(m=>m.YearsInJail)
+        @Html.HiddenFor(m=>m.OfficerName)
         <h2 style="font-size: 48px; font-weight: bold; margin-bottom: 50px">Edit record🧾</h2>
         <input type="text" placeholder="Name" value="@Model.Name" asp-for="Name" style="margin-bottom: 20px; background: none; border: none; border-bottom: 2px solid #ffffff; color: #ffffff; border-radius: 0; width: 350px; height: 45px; font-weight: bold; font-size: 18px"/>
         <input type="text" placeholder="Description" value="@Model.Description" asp-for="Description" style="margin-bottom: 20px; background: none; border: none; border-bottom: 2px solid #ffffff; color: #ffffff; border-radius: 0; width: 350px; height: 45px; font-weight: bold; font-size: 18px"/>

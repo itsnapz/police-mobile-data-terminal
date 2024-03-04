@@ -266,7 +266,7 @@ public class DBService
         var record = _db.Records.FirstOrDefault(x => x.Id == dto.Id);
 
         record.Name = dto.Name;
-        record.Description = dto.Name;
+        record.Description = dto.Description;
         record.YearsInJail = dto.YearsInJail;
         
         _db.SaveChanges();
