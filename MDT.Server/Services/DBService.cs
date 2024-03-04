@@ -250,35 +250,49 @@ public class DBService
         _db.SaveChanges();
     }
 
-    public void EditWarrant(WarrantModel warrant)
+    public void EditWarrant(WarrantModel model)
     {
-        var model = _db.Warrants.FirstOrDefault(x => x.Id == warrant.Id);
+        var dto = model.Adapt<Warrant>();
+        var warrant = _db.Warrants.FirstOrDefault(x => x.Id == dto.Id);
 
-        model = warrant.Adapt<Warrant>();
+        warrant.Reason = dto.Reason;
+        
         _db.SaveChanges();
     }
 
-    public void EditRecord(RecordModel record)
+    public void EditRecord(RecordModel model)
     {
-        var model = _db.Records.FirstOrDefault(x => x.Id == record.Id);
+        var dto = model.Adapt<Record>();
+        var record = _db.Records.FirstOrDefault(x => x.Id == dto.Id);
 
-        model = record.Adapt<Record>();
+        record.Name = dto.Name;
+        record.Description = dto.Name;
+        record.YearsInJail = dto.YearsInJail;
+        
         _db.SaveChanges();
     }
 
-    public void EditFine(FineModel fine)
+    public void EditFine(FineModel model)
     {
-        var model = _db.Fines.FirstOrDefault(x => x.Id == fine.Id);
+        var dto = model.Adapt<Fine>();
+        var fine = _db.Fines.FirstOrDefault(x => x.Id == dto.Id);
+        
 
-        model = fine.Adapt<Fine>();
+        fine.Name = dto.Name;
+        fine.Description = dto.Description;
+        fine.Price = dto.Price;
+        
         _db.SaveChanges();
     }
 
-    public void EditCar(CarModel car)
+    public void EditCar(CarModel model)
     {
-        var model = _db.Cars.FirstOrDefault(x => x.Id == car.Id);
+        var dto = model.Adapt<Car>();
+        var car = _db.Cars.FirstOrDefault(x => x.Id == dto.Id);
 
-        model = car.Adapt<Car>();
+        car.Model = dto.Model;
+        car.Plate = dto.Plate;
+        
         _db.SaveChanges();
     }
 }

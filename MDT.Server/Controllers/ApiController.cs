@@ -196,8 +196,8 @@ public class ApiController : Controller
         return Ok();
     }
 
-    [HttpPut(Endpoints.EDIT_WARRANT)]
-    public IActionResult EditWarrant(WarrantModel warrant)
+    [HttpPost(Endpoints.EDIT_WARRANT)]
+    public IActionResult EditWarrant([FromBody] WarrantModel warrant)
     {
         if (warrant == null)
         {
@@ -208,8 +208,8 @@ public class ApiController : Controller
         return Ok();
     }
 
-    [HttpPut(Endpoints.EDIT_RECORD)]
-    public IActionResult EditRecord(RecordModel record)
+    [HttpPost(Endpoints.EDIT_RECORD)]
+    public IActionResult EditRecord([FromBody] RecordModel record)
     {
         if (record == null)
         {
@@ -220,8 +220,8 @@ public class ApiController : Controller
         return Ok();
     }
 
-    [HttpPut(Endpoints.EDIT_FINE)]
-    public IActionResult EditFine(FineModel fine)
+    [HttpPost(Endpoints.EDIT_FINE)]
+    public IActionResult EditFine([FromBody] FineModel fine)
     {
         if (fine == null)
         {
@@ -232,8 +232,8 @@ public class ApiController : Controller
         return Ok();
     }
 
-    [HttpPut(Endpoints.EDIT_CAR)]
-    public IActionResult EditCar(CarModel car)
+    [HttpPost(Endpoints.EDIT_CAR)]
+    public IActionResult EditCar([FromBody] CarModel car)
     {
         if (car == null)
         {

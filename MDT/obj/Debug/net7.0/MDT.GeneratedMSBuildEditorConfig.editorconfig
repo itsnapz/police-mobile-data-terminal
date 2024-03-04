@@ -128,6 +128,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXJEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/napz/Documents/police-mobile-data-terminal/MDT/Views/Home/CarEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXJFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/napz/Documents/police-mobile-data-terminal/MDT/Views/Home/CarNew.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXJOZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -148,6 +152,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGaW5lRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/napz/Documents/police-mobile-data-terminal/MDT/Views/Home/FineEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGaW5lRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/napz/Documents/police-mobile-data-terminal/MDT/Views/Home/FineNew.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGaW5lTmV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -164,6 +172,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWNvcmREZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/napz/Documents/police-mobile-data-terminal/MDT/Views/Home/RecordEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWNvcmRFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/napz/Documents/police-mobile-data-terminal/MDT/Views/Home/RecordNew.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWNvcmROZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -174,6 +186,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/napz/Documents/police-mobile-data-terminal/MDT/Views/Home/WarrantDetail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxXYXJyYW50RGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/napz/Documents/police-mobile-data-terminal/MDT/Views/Home/WarrantEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxXYXJyYW50RWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/napz/Documents/police-mobile-data-terminal/MDT/Views/Home/WarrantNew.cshtml]

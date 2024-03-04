@@ -127,21 +127,21 @@ public class MDTService
 
     public async Task EditWarrant(WarrantModel warrant)
     {
-        await _client.PutAsJsonAsync(Endpoints.EDIT_WARRANT, warrant);
+        await _client.PostAsJsonAsync(Endpoints.EDIT_WARRANT, warrant);
     }
 
     public async Task EditRecord(RecordModel record)
     {
-        await _client.PutAsJsonAsync(Endpoints.EDIT_RECORD, record);
+        await _client.PostAsJsonAsync(Endpoints.EDIT_RECORD, record);
     }
 
     public async Task EditFine(FineModel fine)
     {
-        await _client.PutAsJsonAsync(Endpoints.EDIT_FINE, fine);
+        await _client.PostAsJsonAsync(Endpoints.EDIT_FINE, fine);
     }
 
     public async Task EditCar(CarModel car)
     {
-        await _client.PutAsJsonAsync(Endpoints.EDIT_CAR, car);
+        await _client.PostAsJsonAsync(Endpoints.EDIT_CAR, car);
     }
 }

@@ -248,18 +248,18 @@ public class HomeController : Controller
         
         return RedirectToAction("Fines");
     }
-
-    [HttpGet]
+    
     [Authorize]
+    [HttpGet]
     public async Task<IActionResult> FineEdit(Guid fineId)
     {
         var fine = await _mdt.GetFine(fineId);
 
         return View(fine);
     }
-
-    [HttpPost]
+    
     [Authorize]
+    [HttpPost]
     public async Task<IActionResult> FineEdit(FineModel fine)
     {
         await _mdt.EditFine(fine);
