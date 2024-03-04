@@ -101,6 +101,24 @@ public class HomeController : Controller
         return RedirectToAction("Cars");
     }
 
+    [HttpGet]
+    [Authorize]
+    public async Task<IActionResult> CarEdit(Guid carId)
+    {
+        var car = await _mdt.GetCar(carId);
+
+        return View(car);
+    }
+
+    [HttpPost]
+    [Authorize]
+    public async Task<IActionResult> CarEdit(CarModel car)
+    {
+        await _mdt.EditCar(car);
+        
+        return RedirectToAction("Cars");
+    }
+
     [Authorize]
     public IActionResult Records()
     {
@@ -150,9 +168,27 @@ public class HomeController : Controller
     }
 
     [Authorize(Roles = "Admin")]
-    public IActionResult RecordDelete(Guid carId)
+    public async Task<IActionResult> RecordDelete(Guid recordId)
     {
-        _mdt.DeleteRecord(carId);
+        await _mdt.DeleteRecord(recordId);
+        
+        return RedirectToAction("Records");
+    }
+
+    [HttpGet]
+    [Authorize]
+    public async Task<IActionResult> RecordEdit(Guid recordId)
+    {
+        var record = await _mdt.GetRecord(recordId);
+
+        return View(record);
+    }
+
+    [HttpPost]
+    [Authorize]
+    public async Task<IActionResult> RecordEdit(RecordModel record)
+    {
+        await _mdt.EditRecord(record);
         
         return RedirectToAction("Records");
     }
@@ -206,9 +242,27 @@ public class HomeController : Controller
     }
 
     [Authorize(Roles = "Admin")]
-    public IActionResult FineDelete(Guid fineId)
+    public async Task<IActionResult> FineDelete(Guid fineId)
     {
-        _mdt.DeleteFine(fineId);
+        await _mdt.DeleteFine(fineId);
+        
+        return RedirectToAction("Fines");
+    }
+
+    [HttpGet]
+    [Authorize]
+    public async Task<IActionResult> FineEdit(Guid fineId)
+    {
+        var fine = await _mdt.GetFine(fineId);
+
+        return View(fine);
+    }
+
+    [HttpPost]
+    [Authorize]
+    public async Task<IActionResult> FineEdit(FineModel fine)
+    {
+        await _mdt.EditFine(fine);
         
         return RedirectToAction("Fines");
     }
@@ -263,10 +317,28 @@ public class HomeController : Controller
     }
 
     [Authorize(Roles = "Admin")]
-    public IActionResult WarrantDelete(Guid warrantId)
+    public async Task<IActionResult> WarrantDelete(Guid warrantId)
     {
-        _mdt.DeleteWarrant(warrantId);
+        await _mdt.DeleteWarrant(warrantId);
         
+        return RedirectToAction("Warrants");
+    }
+
+    [HttpGet]
+    [Authorize]
+    public async Task<IActionResult> WarrantEdit(Guid warrantId)
+    {
+        var warrant = await _mdt.GetWarrant(warrantId);
+
+        return View(warrant);
+    }
+
+    [HttpPost]
+    [Authorize]
+    public async Task<IActionResult> WarrantEdit(WarrantModel warrant)
+    {
+        await _mdt.EditWarrant(warrant);
+
         return RedirectToAction("Warrants");
     }
 
