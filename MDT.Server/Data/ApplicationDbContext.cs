@@ -10,6 +10,7 @@ public class ApplicationDbContext : IdentityDbContext
     public DbSet<Record> Records { get; set; }
     public DbSet<Fine> Fines { get; set; }
     public DbSet<Warrant> Warrants { get; set; }
+    public DbSet<Station> Stations { get; set; }
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)
     {

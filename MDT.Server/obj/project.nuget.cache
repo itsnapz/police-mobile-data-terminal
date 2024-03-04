@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "o2TaqXeYSF1D4rFT1HvV7UFAfUhBB5S0cDTyzIo4X8uwA4doLhmitm3fEf7G0Yw4nD/5tubnQdfT+CeRE+fEHw==",
+  "dgSpecHash": "N09mQHM/eWCO+VzRHzdNTHlP3y3vkjuLvuA9O4fSsuh56TNLnCbJl/hm9ClzhCFQXK4Xs3UfzfCTviEKwWVf7A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Administrator\\Documents\\police-mobile-data-terminal\\MDT.Server\\MDT.Server.csproj",
+  "projectFilePath": "C:\\Users\\Administrator\\Documents\\police-mobile-data-terminal\\mdt.server\\MDT.Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\castle.core\\5.1.0\\castle.core.5.1.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

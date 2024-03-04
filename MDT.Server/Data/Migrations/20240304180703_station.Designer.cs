@@ -3,6 +3,7 @@ using System;
 using MDT.Server.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MDT.Server.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240304180703_station")]
+    partial class station
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.16");
@@ -159,6 +162,9 @@ namespace MDT.Server.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
+                    b.Property<Guid>("CitizenId")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -172,6 +178,9 @@ namespace MDT.Server.Data.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CitizenId")
+                        .IsUnique();
 
                     b.ToTable("Stations");
                 });
@@ -433,6 +442,17 @@ namespace MDT.Server.Data.Migrations
                     b.Navigation("Citizen");
                 });
 
+            modelBuilder.Entity("MDT.Server.Data.Station", b =>
+                {
+                    b.HasOne("MDT.Server.Data.Citizen", "Citizen")
+                        .WithOne("Station")
+                        .HasForeignKey("MDT.Server.Data.Station", "CitizenId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Citizen");
+                });
+
             modelBuilder.Entity("MDT.Server.Data.Warrant", b =>
                 {
                     b.HasOne("MDT.Server.Data.Citizen", "Citizen")
@@ -502,6 +522,9 @@ namespace MDT.Server.Data.Migrations
                     b.Navigation("Fines");
 
                     b.Navigation("Records");
+
+                    b.Navigation("Station")
+                        .IsRequired();
 
                     b.Navigation("Warrants");
                 });

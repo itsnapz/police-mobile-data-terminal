@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MDT.Lib")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e7de3338a706836a6e121ed2c30d0c6e1456f08d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7f1372b4b1b2ee14890ea6301e97beaacfb0c0b1")]
 [assembly: System.Reflection.AssemblyProductAttribute("MDT.Lib")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MDT.Lib")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
