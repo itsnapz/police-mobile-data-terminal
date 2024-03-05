@@ -27,4 +27,4 @@
 > - #### SQLite
 
 ## 🖼 Showcase 🖼 ##
-> !(https://i.imgur.com/wCqpRfI.png)
+> ![](https://i.imgur.com/wCqpRfI.png)
