@@ -25,3 +25,6 @@
 > - #### Citizens, Cars, Records, Fines, Warrants, Stations
 > - #### Každá tabulka kromě Citizens má v sobě občana, ke kterému určitý záznam je připojen
 > - #### SQLite
+
+## 🖼 Showcase 🖼 ##
+> !(https://i.imgur.com/wCqpRfI.png)
