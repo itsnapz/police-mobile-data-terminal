@@ -1,4 +1,4 @@
-# 👮‍♂️ Police Mobile Data Terminal 👮‍♂️ #
+# Police Mobile Data Terminal 👮‍♂️#
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 
